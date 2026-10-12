@@ -227,6 +227,8 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
           <button class="btn" id="saveBtn" title="Download everything (teams, games, picks, settings) as a JSON file you can open later">Save</button>
           <button class="btn" id="csvBtn" title="Download each team’s seed points by week as a CSV">Export CSV</button>
           <button class="btn" id="openBtn" title="Open a saved file or scraper JSON">Open</button>
+          <button class="btn" id="preloadSaveBtn" title="Download preload-data.js. Put it next to this HTML file and the app opens with this data.">Save as preload</button>
+          <button class="btn" id="preloadBtn" title="Replace the current data and picks with preload-data.js" hidden>Reload preloaded data</button>
           <button class="btn" id="clearBtn">Clear all data</button>
           <input type="file" id="fileIn" accept=".json,.txt,.csv" hidden>
         </div>
@@ -273,6 +275,9 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
   </div>
 </main>
 
+<!-- Optional preloaded data. On a web server (GitHub Pages) put a Save file next to this page as preload.json.
+     Opened from disk, use preload-data.js instead (made with "Save as preload"). Either can be left out. -->
+<script src="preload-data.js"></script>
 <script>
 const SAMPLE = `# Sample data with made-up teams. Replace with real schedules.
 @team Prairie City | 11A
@@ -796,11 +801,12 @@ async function save(){
   catch (e) { console.warn('Save failed', e); }
 }
 async function load(){
-  if (!window.storage) return;
+  if (!window.storage) return false;
   try {
     const r = await window.storage.get('sdfb:state', false);
-    if (r && r.value) Object.assign(state, JSON.parse(r.value));
+    if (r && r.value) { Object.assign(state, JSON.parse(r.value)); return true; }
   } catch (e) { /* nothing saved yet */ }
+  return false;
 }
 const update = () => { render(); save(); };
 
@@ -974,7 +980,7 @@ function download(name, content, type){
 const today = () => new Date().toISOString().slice(0, 10);
 
 // Full save: everything needed to restore, plus a readable copy of the standings and games
-function saveAll(){
+function buildSave(){
   if (!$('view-data').hidden) state.text = $('dataText').value;
   build();
   const { teams, games, now, proj, auto } = model;
@@ -998,7 +1004,23 @@ function saveAll(){
       pickIsYours: !g.played && !!state.picks[g.id]
     }))
   };
-  download(`sd-football-seed-points-${today()}.json`, JSON.stringify(out, null, 2), 'application/json');
+  return out;
+}
+function saveAll(){
+  download(`sd-football-seed-points-${today()}.json`, JSON.stringify(buildSave(), null, 2), 'application/json');
+}
+// Writes preload-data.js: put it next to the HTML file and the app opens with this data
+function savePreload(){
+  const js = '// Preloaded data for sd-football-seed-points.html. Made with "Save as preload".\n'
+    + 'window.SD_FOOTBALL_PRELOAD = ' + JSON.stringify(buildSave(), null, 1) + ';\n';
+  download('preload-data.js', js, 'text/javascript');
+}
+function applyPreload(j){
+  if (!j || typeof j.text !== 'string') return false;
+  state.text = j.text;
+  state.picks = j.picks || {};
+  if (j.settings) Object.assign(state, { cls: j.settings.cls ?? state.cls, spots: j.settings.spots ?? state.spots, showAll: !!j.settings.showAll });
+  return true;
 }
 
 // Opens our own saves, older saves ({text, picks}), scraper JSON, or plain text data
@@ -1019,6 +1041,14 @@ async function openFile(file){
 }
 
 $('saveBtn').onclick = saveAll;
+$('preloadSaveBtn').onclick = savePreload;
+$('preloadBtn').hidden = !window.SD_FOOTBALL_PRELOAD;
+$('preloadBtn').onclick = () => {
+  if (!confirm('Replace your current data and picks with the preloaded data?')) return;
+  applyPreload(window.SD_FOOTBALL_PRELOAD);
+  $('dataText').value = state.text;
+  update();
+};
 $('openBtn').onclick = () => $('fileIn').click();
 $('fileIn').onchange = e => { openFile(e.target.files[0]); e.target.value = ''; };
 
@@ -1572,7 +1602,29 @@ document.addEventListener('drop', e => {
 $('impRead').onclick = readImport;
 $('impClear').onclick = () => { $('impText').value = ''; $('impPreview').innerHTML = ''; pendingImport = null; pasteHtml = ''; };
 
-load().then(render);
+// preload.json can be a Save file as-is. Only readable when the page is served over http(s)
+// (GitHub Pages, a web server); browsers block it for pages opened from disk.
+async function fetchPreloadJson(){
+  if (!/^https?:$/.test(location.protocol)) return null;
+  try {
+    const r = await fetch('preload.json', { cache: 'no-cache' }); // pick up a new commit without a stale copy
+    if (!r.ok) return null;
+    const j = await r.json();
+    return typeof j.text === 'string' ? j : null;
+  } catch { return null; }
+}
+
+// Startup order: data saved in this browser (Claude artifact storage), then preload.json, then preload-data.js
+(async () => {
+  const found = await load();
+  if (!found) {
+    const j = await fetchPreloadJson();
+    if (j) window.SD_FOOTBALL_PRELOAD = j;   // also used by "Reload preloaded data"
+    applyPreload(window.SD_FOOTBALL_PRELOAD);
+  }
+  $('preloadBtn').hidden = !window.SD_FOOTBALL_PRELOAD;
+  render();
+})();
 </script>
 </body>
 </html>
