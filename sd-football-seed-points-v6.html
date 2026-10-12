@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SD Football Seed Point Projector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk:#f2f4ee; --paper:#fbfcf8; --ink:#1c2a21; --muted:#5d6b62;
+  --turf:#2e6a3e; --turf-dark:#234f2f; --turf-soft:#e1ece1;
+  --post:#e3b52a; --loss:#a8432e; --line:#d3dacf;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--chalk);color:var(--ink);font:15px/1.45 Barlow,system-ui,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--post);outline-offset:2px}
+
+header{
+  background:var(--turf);color:#fff;padding:20px 24px 0;
+  background-image:repeating-linear-gradient(90deg,transparent 0 78px,rgba(255,255,255,.13) 78px 80px);
+}
+h1{font:700 34px/1.05 "Barlow Condensed",sans-serif;margin:0 0 4px;letter-spacing:.3px}
+.sub{margin:0 0 16px;color:#d8e8da;max-width:70ch}
+.controls{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:end;margin-bottom:16px}
+.controls label{display:flex;flex-direction:column;gap:3px;font-size:13px;color:#d8e8da}
+.controls select,.controls input{background:var(--paper);color:var(--ink);border:0;border-radius:4px;padding:6px 8px;min-width:110px}
+.controls input[type=number]{width:80px;min-width:0}
+.controls input[type=checkbox]{min-width:0;width:16px;height:16px}
+.tabs{display:flex;gap:4px}
+.tab{background:transparent;border:0;color:#d8e8da;padding:9px 16px;border-radius:6px 6px 0 0;cursor:pointer;font-weight:600}
+.tab[aria-selected=true]{background:var(--chalk);color:var(--ink)}
+
+main{padding:22px 24px 40px;max-width:1280px}
+.grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:920px){.grid{grid-template-columns:1fr}}
+section.panel{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+h2{font:600 22px/1.1 "Barlow Condensed",sans-serif;margin:0 0 4px}
+.note{color:var(--muted);font-size:13px;margin:0 0 12px}
+
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-weight:600;font-size:12.5px;color:var(--muted);text-align:right;padding:4px 6px;border-bottom:2px solid var(--ink)}
+th.l,td.l{text-align:left}
+td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right}
+td.rk{font:700 18px "Barlow Condensed",sans-serif;text-align:center;width:36px}
+tr.team{cursor:pointer}
+tr.team:hover td{background:var(--turf-soft)}
+tr.team.open td{background:var(--turf-soft)}
+.spa{font:600 17px "Barlow Condensed",sans-serif}
+.now{color:var(--muted)}
+.up{color:var(--turf);font-weight:600}
+.down{color:var(--loss);font-weight:600}
+.chk{font-size:11.5px;color:var(--turf);font-weight:600;margin-left:5px}
+.chk.off{display:block;color:#8a6a00;margin:0;white-space:nowrap}
+.bonus{font-size:11.5px;color:var(--turf);font-weight:600;margin-left:4px}
+tr.cutoff td{padding:0;border-bottom:0}
+tr.cutoff div{border-top:3px solid var(--post);font-size:12px;color:#8a6a00;padding:2px 0 4px;text-align:left}
+tr.detail td{background:#f6f8f3;padding:6px 10px 12px}
+.log th{border-bottom:1px solid var(--muted)}
+.log td{padding:4px 6px;font-size:13.5px}
+.w{color:var(--turf);font-weight:600}.lo{color:var(--loss);font-weight:600}
+.pred{font-style:italic;color:var(--muted)}
+
+.date{font:600 16px "Barlow Condensed",sans-serif;margin:16px 0 6px;color:var(--muted)}
+.date:first-of-type{margin-top:4px}
+.game{display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;margin-bottom:6px}
+.vs{font-size:12px;color:var(--muted)}
+.pick{border:1.5px solid var(--line);background:#fff;border-radius:6px;padding:7px 9px;cursor:pointer;text-align:left;line-height:1.2}
+.pick small{display:block;color:var(--muted);font-size:12px}
+.pick.on{background:var(--turf);border-color:var(--turf);color:#fff}
+.pick.on small{color:#d8e8da}
+.pick:disabled{cursor:default;opacity:.75}
+.pick.on.mine{background:var(--turf-dark);box-shadow:inset 0 0 0 2px var(--post)}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin:0 0 10px;flex-wrap:wrap}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px;background:var(--turf)}
+.sw.mine{background:var(--turf-dark);box-shadow:inset 0 0 0 2px var(--post)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{border:1.5px solid var(--turf);background:#fff;color:var(--turf);border-radius:6px;padding:6px 12px;cursor:pointer;font-weight:600}
+.btn.hdr{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn.hdr:hover{background:rgba(255,255,255,.12)}
+.btn.primary{background:var(--turf);color:#fff}
+.empty{color:var(--muted);padding:12px 0}
+
+textarea{width:100%;min-height:420px;border:1px solid var(--line);border-radius:6px;padding:10px;font:13.5px/1.5 ui-monospace,Menlo,Consolas,monospace;background:#fff}
+.errors{color:var(--loss);font-size:13.5px;margin:8px 0 0;padding-left:18px}
+.help code{background:var(--turf-soft);padding:1px 4px;border-radius:3px}
+.help p{margin:6px 0;max-width:75ch}
+.formula td{text-align:center}
+label.field{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--muted)}
+label.field select,label.field input{border:1px solid var(--line);border-radius:4px;padding:6px 8px;background:#fff;color:var(--ink);min-width:150px}
+.imp-team{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.imp-team:first-child{border-top:0;margin-top:0;padding-top:0}
+.imp-team h3{font:600 18px "Barlow Condensed",sans-serif;margin:0 0 2px}
+.warn{background:#fbf3d6;border-left:3px solid var(--post);padding:8px 10px;margin:10px 0;font-size:13.5px}
+.warn label{display:block;margin-top:4px}
+.ok{background:var(--turf-soft);border-left:3px solid var(--turf);padding:8px 10px;margin:10px 0;font-size:13.5px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <h1>South Dakota football seed point projector</h1>
+  <p class="sub">Current seed points from games played, plus projected standings once the remaining games are decided. Click a team to see its game-by-game points.</p>
+  <div class="controls">
+    <label>Class<select id="cls"></select></label>
+    <label>Playoff spots<input id="spots" type="number" min="0" max="64"></label>
+    <label style="flex-direction:row;align-items:center;gap:6px;color:#fff"><input id="showAll" type="checkbox"> Show games from every class</label>
+    <div class="row" style="margin-left:auto">
+      <button class="btn hdr" id="saveBtn" title="Download everything (teams, games, picks, settings) as a JSON file you can load later">Save</button>
+      <button class="btn hdr" id="csvBtn" title="Download each team’s seed points by week as a CSV">Export CSV</button>
+      <button class="btn hdr" id="openBtn" title="Load a saved file or scraper JSON">Open</button>
+    </div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-main" aria-selected="true">Standings and picks</button>
+    <button class="tab" role="tab" id="tab-import" aria-selected="false">Import from GoBound</button>
+    <button class="tab" role="tab" id="tab-data" aria-selected="false">Teams and games</button>
+  </div>
+</header>
+
+<main>
+  <div id="view-main" class="grid">
+    <section class="panel">
+      <h2>Projected standings</h2>
+      <p class="note">“Now” uses only games already played. “Projected” adds every remaining game using the picks on the right.</p>
+      <div id="standings"></div>
+    </section>
+    <section class="panel">
+      <div class="row" style="justify-content:space-between">
+        <h2>Remaining games</h2>
+        <button class="btn" id="resetPicks">Reset to auto picks</button>
+      </div>
+      <p class="note">Auto picks go to the team with more seed points (GoBound’s number when you’ve imported standings), or the better record when seed points aren’t known. Click the other team to change a pick.</p>
+      <div class="legend"><span><span class="sw"></span>Auto pick</span><span><span class="sw mine"></span>Your pick</span></div>
+      <div id="games"></div>
+    </section>
+  </div>
+
+  <div id="view-import" hidden>
+    <div class="grid">
+      <section class="panel">
+        <h2>Load scraper data</h2>
+        <p class="note">Load the <code>gobound-football.json</code> file made by the GoBoundScraper app. It replaces the teams and games you have loaded with a fresh copy. You can also drop the file anywhere on this page.</p>
+        <div class="row" style="margin-bottom:18px">
+          <button class="btn primary" id="jsonBtn">Load JSON file</button>
+          <input type="file" id="jsonIn" accept=".json,application/json" hidden>
+        </div>
+        <h2>Paste from GoBound</h2>
+        <p class="note">Works with a class’s standings page, a weekly scoreboard, or a team’s schedule page. Select the games on the page, copy, and paste here. You can paste several weeks or several teams at once.</p>
+        <div class="row" style="margin-bottom:10px">
+          <label class="field">Week of <span class="note" style="margin:0">(scoreboard pastes)</span>
+            <input id="impDate" type="date">
+          </label>
+          <label class="field">Class <span class="note" style="margin:0">(only for teams not in the class list)</span>
+            <select id="impClass"><option>11AAA</option><option>11AA</option><option>11A</option><option>11B</option><option>9AA</option><option>9A</option><option>9B</option><option>All-Nations 9A</option><option>All-Nations 9B</option><option>Other</option></select>
+          </label>
+          <label class="field">Team name <span class="note" style="margin:0">(schedule pastes, if not found)</span>
+            <input id="impTeam" type="text" placeholder="e.g. Huron">
+          </label>
+        </div>
+        <textarea id="impText" spellcheck="false" style="min-height:280px" placeholder="Paste GoBound standings, a scoreboard, or a schedule here"></textarea>
+        <div class="row" style="margin-top:10px">
+          <button class="btn primary" id="impRead">Read games</button>
+          <button class="btn" id="impClear">Clear</button>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Preview</h2>
+        <div id="impPreview"><p class="empty">Paste games and choose Read games. Nothing is added until you confirm.</p></div>
+      </section>
+      <section class="panel">
+        <h2>Update classes</h2>
+        <p class="note">The 2026 class list is built in. To change it, paste GoBound’s teams page (class headings are read automatically), a single class’s standings page, or team names one per line. The class below is used until a class heading appears.</p>
+        <label class="field" style="margin-bottom:10px">Class
+          <select id="asgClass"><option>11AAA</option><option>11AA</option><option>11A</option><option>11B</option><option>9AA</option><option>9A</option><option>9B</option><option>All-Nations 9A</option><option>All-Nations 9B</option></select>
+        </label>
+        <textarea id="asgText" spellcheck="false" style="min-height:160px" placeholder="Paste standings or team names"></textarea>
+        <div class="row" style="margin-top:10px"><button class="btn primary" id="asgRun">Assign class</button></div>
+        <div id="asgOut"></div>
+      </section>
+    </div>
+  </div>
+
+  <div id="view-data" hidden>
+    <div class="grid">
+      <section class="panel">
+        <h2>Teams and games</h2>
+        <p class="note">Edit the list, then apply. Your picks are kept for games that still exist.</p>
+        <textarea id="dataText" spellcheck="false"></textarea>
+        <ul class="errors" id="errors"></ul>
+        <div class="row" style="margin-top:10px">
+          <button class="btn primary" id="apply">Apply changes</button>
+          <button class="btn" id="exportBtn">Save to file</button>
+          <button class="btn" id="importBtn">Load from file</button>
+          <button class="btn" id="sampleBtn">Load sample data</button>
+          <button class="btn" id="clearBtn">Clear all data</button>
+          <input type="file" id="fileIn" accept=".json,.txt,.csv" hidden>
+        </div>
+      </section>
+      <section class="panel help">
+        <h2>Format</h2>
+        <p>Declare each team and its class on its own line:</p>
+        <p><code>@team Pierre | 11AA</code></p>
+        <p>For an opponent whose full schedule you aren’t entering (out-of-state, another class), add its record from games not in this list so its win percentage is right:</p>
+        <p><code>@team Some MN School | Other | 4-2</code></p>
+        <p>Then one game per line, away team first:</p>
+        <p><code>2026-09-04, Huron, Pierre, 14, 28</code></p>
+        <p>Leave the scores blank for games not yet played:</p>
+        <p><code>2026-10-16, Pierre, Huron, ,</code></p>
+        <p>The importer also writes two other kinds of lines. <code>@record Yankton | 7-2</code> is an opponent’s current record as shown on GoBound, used when you haven’t imported that opponent’s own schedule. <code>@alias Pierre T.F. Riggs = Pierre</code> tells the app two spellings are the same team.</p>
+        <p>Add <code>nv</code> as a sixth field for a non-varsity opponent; that game is left out of seed points entirely.</p>
+        <p>Use YYYY-MM-DD dates so games sort correctly. A game entered twice (once from each team’s schedule) is counted once. Lines starting with <code>#</code> are ignored.</p>
+        <p>An opponent’s win percentage counts every varsity game in the list for that team, so enter full schedules for any team that shows up as an opponent.</p>
+        <h2 style="margin-top:16px">Seed point table</h2>
+        <table class="formula">
+          <tr><th class="l">Opponent win %</th><th>Win</th><th>Loss</th></tr>
+          <tr><td class="l">.875 – 1.000</td><td>51.5</td><td>39</td></tr>
+          <tr><td class="l">.750 – .874</td><td>50</td><td>37.5</td></tr>
+          <tr><td class="l">.625 – .749</td><td>48.5</td><td>36</td></tr>
+          <tr><td class="l">.500 – .624</td><td>47</td><td>34.5</td></tr>
+          <tr><td class="l">.375 – .499</td><td>45.5</td><td>33</td></tr>
+          <tr><td class="l">.250 – .374</td><td>44</td><td>31.5</td></tr>
+          <tr><td class="l">.125 – .249</td><td>42.5</td><td>30</td></tr>
+          <tr><td class="l">.000 – .124</td><td>41</td><td>28.5</td></tr>
+        </table>
+        <p>Undefeated teams get one bonus point per game played, except in 11AAA. Average = total points ÷ varsity games played.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script>
+const SAMPLE = `# Sample data with made-up teams. Replace with real schedules.
+@team Prairie City | 11A
+@team Bluestem | 11A
+@team Coteau | 11A
+@team Jim River | 11A
+@team Big Sioux | 11A
+@team Badlands | 11A
+@team Missouri Breaks | 11A
+@team Black Hills Tech | 11A
+@team Lakes Region (MN) | Other | 3-1
+
+# date, away, home, away score, home score, [nv]
+2026-08-28, Prairie City, Bluestem, 21, 14
+2026-08-28, Coteau, Jim River, 7, 28
+2026-08-28, Big Sioux, Badlands, 35, 20
+2026-08-28, Missouri Breaks, Black Hills Tech, 13, 17
+2026-09-04, Bluestem, Coteau, 24, 10
+2026-09-04, Jim River, Prairie City, 14, 17
+2026-09-04, Badlands, Missouri Breaks, 6, 21
+2026-09-04, Black Hills Tech, Big Sioux, 10, 31
+2026-09-11, Prairie City, Big Sioux, 20, 27
+2026-09-11, Coteau, Badlands, 28, 0
+2026-09-11, Lakes Region (MN), Jim River, 21, 24
+2026-09-11, Bluestem, Black Hills Tech, 35, 7
+2026-09-18, Big Sioux, Jim River, 42, 21
+2026-09-18, Badlands, Prairie City, 0, 45
+2026-09-18, Black Hills Tech, Coteau, 14, 13
+2026-09-18, Missouri Breaks, Bluestem, 20, 23
+2026-09-25, Coteau, Missouri Breaks JV, 40, 6, nv
+
+# Not played yet
+2026-10-02, Jim River, Bluestem, ,
+2026-10-02, Big Sioux, Missouri Breaks, ,
+2026-10-02, Prairie City, Coteau, ,
+2026-10-02, Black Hills Tech, Badlands, ,
+2026-10-09, Bluestem, Big Sioux, ,
+2026-10-09, Coteau, Lakes Region (MN), ,
+2026-10-09, Jim River, Black Hills Tech, ,
+2026-10-09, Missouri Breaks, Prairie City, ,
+`;
+
+// Opponent win % floor, points for win, points for loss
+const TABLE = [[0.875,51.5,39],[0.75,50,37.5],[0.625,48.5,36],[0.5,47,34.5],
+               [0.375,45.5,33],[0.25,44,31.5],[0.125,42.5,30],[0,41,28.5]];
+function seedPoints(pct, won){
+  for (const [min,w,l] of TABLE) if (pct + 1e-9 >= min) return won ? w : l;
+  return won ? 41 : 28.5;
+}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const keyOf = n => n.trim().toLowerCase().replace(/\s+/g,' ');
+
+const ROSTER_2026 = [ // [school, GoBound name with mascot, class] — from GoBound's 2026-27 teams page
+  // 11AAA
+  ['Brandon Valley', 'Brandon Valley Lynx', '11AAA'],
+  ['Harrisburg', 'Harrisburg Tigers', '11AAA'],
+  ["O'Gorman", "O'Gorman Knights", '11AAA'],
+  ['Rapid City Central', 'Rapid City Central Cobblers', '11AAA'],
+  ['Rapid City Stevens', 'Rapid City Stevens Raiders', '11AAA'],
+  ['Sioux Falls Jefferson', 'Sioux Falls Jefferson Cavaliers', '11AAA'],
+  ['Sioux Falls Lincoln', 'Sioux Falls Lincoln Patriots', '11AAA'],
+  ['Sioux Falls Roosevelt', 'Sioux Falls Roosevelt Rough Riders', '11AAA'],
+  ['Sioux Falls Washington', 'Sioux Falls Washington Warriors', '11AAA'],
+  // 11AA
+  ['Aberdeen Central', 'Aberdeen Central Golden Eagles', '11AA'],
+  ['Brookings', 'Brookings Bobcats', '11AA'],
+  ['Douglas', 'Douglas Patriots', '11AA'],
+  ['Huron', 'Huron Tigers', '11AA'],
+  ['Mitchell', 'Mitchell Kernels', '11AA'],
+  ['Pierre T.F. Riggs', 'Pierre T.F. Riggs Governors', '11AA'],
+  ['Spearfish', 'Spearfish Spartans', '11AA'],
+  ['Sturgis Brown', 'Sturgis Brown Scoopers', '11AA'],
+  ['Tea Area', 'Tea Area Titans', '11AA'],
+  ['Watertown', 'Watertown Arrows', '11AA'],
+  ['Yankton', 'Yankton Bucks', '11AA'],
+  // 11A
+  ['Belle Fourche', 'Belle Fourche Broncs', '11A'],
+  ['Canton', 'Canton C-Hawks', '11A'],
+  ['Custer', 'Custer Wildcats', '11A'],
+  ['Dakota Valley', 'Dakota Valley Panthers', '11A'],
+  ['Dell Rapids', 'Dell Rapids Quarriers', '11A'],
+  ['Lennox', 'Lennox Orioles', '11A'],
+  ['Madison', 'Madison Bulldogs', '11A'],
+  ['Milbank', 'Milbank Bulldogs', '11A'],
+  ['Sioux Falls Christian', 'Sioux Falls Christian Chargers', '11A'],
+  ['Tri-Valley', 'Tri-Valley Mustangs', '11A'],
+  ['Vermillion', 'Vermillion Tanagers', '11A'],
+  ['West Central', 'West Central Trojans', '11A'],
+  // 11B
+  ['Aberdeen Roncalli', 'Aberdeen Roncalli Cavaliers', '11B'],
+  ['Beresford', 'Beresford Watchdogs', '11B'],
+  ['Chamberlain', 'Chamberlain Cubs', '11B'],
+  ['Clark/Willow Lake', 'Clark/Willow Lake Cyclones', '11B'],
+  ['Deuel', 'Deuel Cardinals', '11B'],
+  ['Elk Point-Jefferson', 'Elk Point-Jefferson Huskies', '11B'],
+  ['Flandreau', 'Flandreau Fliers', '11B'],
+  ['Groton Area', 'Groton Area Tigers', '11B'],
+  ['Hot Springs', 'Hot Springs Bison', '11B'],
+  ['McCook Central/Montrose', 'McCook Central/Montrose Fighting Cougars', '11B'],
+  ['Miller/Highmore-Harrold', 'Miller/Highmore-Harrold Rustlers', '11B'],
+  ['Mobridge-Pollock', 'Mobridge-Pollock Tigers', '11B'],
+  ['Mount Vernon/Plankinton', 'Mount Vernon/Plankinton Titans', '11B'],
+  ['Parker/Marion', 'Parker/Marion Pheasants', '11B'],
+  ['Rapid City Christian', 'Rapid City Christian Comets', '11B'],
+  ['Sioux Valley', 'Sioux Valley Cossacks', '11B'],
+  ['St. Thomas More', 'St. Thomas More Cavaliers', '11B'],
+  ['Wagner', 'Wagner Red Raiders', '11B'],
+  ['Winner', 'Winner Warriors', '11B'],
+  ['Woonsocket/Wessington Springs/Sanborn Central', 'Woonsocket/Wessington Springs/Sanborn Central Bucks', '11B'],
+  // 9AA
+  ['Baltic', 'Baltic Bulldogs', '9AA'],
+  ['Bon Homme', 'Bon Homme Cavaliers', '9AA'],
+  ['Bridgewater-Emery/Ethan', 'Bridgewater-Emery/Ethan Seahawks', '9AA'],
+  ['Britton-Hecla', 'Britton-Hecla Braves', '9AA'],
+  ['Estelline/Hendricks', 'Estelline/Hendricks Redhawks', '9AA'],
+  ['Florence/Henry', 'Florence/Henry Falcons', '9AA'],
+  ['Garretson', 'Garretson Blue Dragons', '9AA'],
+  ['Great Plains Lutheran', 'Great Plains Lutheran Panthers', '9AA'],
+  ['Gregory', 'Gregory Gorillas', '9AA'],
+  ['Hamlin', 'Hamlin Chargers', '9AA'],
+  ['Hanson', 'Hanson Beavers', '9AA'],
+  ['Hill City', 'Hill City Rangers', '9AA'],
+  ['Lead-Deadwood', 'Lead-Deadwood Golddiggers', '9AA'],
+  ['New Underwood', 'New Underwood Tigers', '9AA'],
+  ['Parkston', 'Parkston Trojans', '9AA'],
+  ['Platte-Geddes', 'Platte-Geddes Black Panthers', '9AA'],
+  ['Sioux Falls Lutheran', 'Sioux Falls Lutheran Eagles', '9AA'],
+  ['Sisseton', 'Sisseton Redmen', '9AA'],
+  ['Stanley County', 'Stanley County Buffaloes', '9AA'],
+  ['Tripp-Delmont/Armour/Andes Central/Dakota Christian', 'Tripp-Delmont/Armour/Andes Central/Dakota Christian Thunderhawks', '9AA'],
+  ['Viborg-Hurley', 'Viborg-Hurley Cougars', '9AA'],
+  ['Waubay/Summit', 'Waubay/Summit Mustangs', '9AA'],
+  ['Webster Area', 'Webster Area Bearcats', '9AA'],
+  // 9A
+  ['Alcester-Hudson', 'Alcester-Hudson Cubs', '9A'],
+  ['Bennett County', 'Bennett County Warriors', '9A'],
+  ['Canistota', 'Canistota Hawks', '9A'],
+  ['Castlewood', 'Castlewood Warriors', '9A'],
+  ['Centerville', 'Centerville Tornadoes', '9A'],
+  ['Corsica-Stickney', 'Corsica-Stickney Jaguars', '9A'],
+  ['De Smet', 'De Smet Bulldogs', '9A'],
+  ['Elkton-Lake Benton', 'Elkton-Lake Benton Elks', '9A'],
+  ['Faulkton Area', 'Faulkton Area Trojans', '9A'],
+  ['Freeman', 'Freeman Flyers', '9A'],
+  ['Harding County/Bison', 'Harding County/Bison Ranchers', '9A'],
+  ['Howard', 'Howard Tigers', '9A'],
+  ['Ipswich', 'Ipswich Tigers', '9A'],
+  ['Kimball/White Lake', 'Kimball/White Lake WiLdKats', '9A'],
+  ['Lemmon/McIntosh', 'Lemmon/McIntosh Cowboys', '9A'],
+  ['Lyman', 'Lyman Raiders', '9A'],
+  ['North Central', 'North Central Thunder', '9A'],
+  ['Philip', 'Philip Scotties', '9A'],
+  ['Redfield', 'Redfield Pheasants', '9A'],
+  ['Scotland/Menno', 'Scotland/Menno Trappers', '9A'],
+  ['Sully Buttes', 'Sully Buttes Chargers', '9A'],
+  ['Timber Lake', 'Timber Lake Panthers', '9A'],
+  ['Waverly-South Shore', 'Waverly-South Shore Coyotes', '9A'],
+  // 9B
+  ["Arlington", "Arlington Cardinals", "9B"],
+  ["Avon", "Avon Pirates", "9B"],
+  ["Burke", "Burke Cougars", "9B"],
+  ["Chester", "Chester Flyers", "9B"],
+  ["Colman-Egan", "Colman-Egan Hawks", "9B"],
+  ["Deubrook Area", "Deubrook Area Dolphins", "9B"],
+  ["Gayville-Volin", "Gayville-Volin Raiders", "9B"],
+  ["Gettysburg", "Gettysburg Battlers", "9B"],
+  ["Herreid/Selby Area", "Herreid/Selby Area Wolverines", "9B"],
+  ["Hitchcock-Tulare", "Hitchcock-Tulare Patriots", "9B"],
+  ["Irene-Wakonda", "Irene-Wakonda Eagles", "9B"],
+  ["Iroquois/Lake Preston", "Iroquois/Lake Preston Sharks", "9B"],
+  ["Jones County", "Jones County Coyotes", "9B"],
+  ["Kadoka Area", "Kadoka Area Kougars", "9B"],
+  ["Leola/Frederick Area", "Leola/Frederick Area Titans", "9B"],
+  ["Northwestern", "Northwestern Wildcats", "9B"],
+  ["Oldham-Ramona-Rutland", "Oldham-Ramona-Rutland Raiders", "9B"],
+  ["St. Mary's", "St. Mary's Cardinals", "9B"],
+  ["Sunshine Bible Academy", "Sunshine Bible Academy Crusaders", "9B"],
+  ["Wall", "Wall Eagles", "9B"],
+  ["Warner", "Warner Monarchs", "9B"],
+  ["Wilmot", "Wilmot Wolves", "9B"],
+  ["Wolsey-Wessington", "Wolsey-Wessington Warbirds", "9B"],
+  // All-Nations 9A
+  ["Cheyenne-Eagle Butte/Tiospaye Topa", "Cheyenne-Eagle Butte/Tiospaye Topa Braves", "All-Nations 9A"],
+  ["Lakota Tech", "Lakota Tech Tatanka", "All-Nations 9A"],
+  ["Little Wound", "Little Wound Mustangs", "All-Nations 9A"],
+  ["Mahpíya Lúta", "Mahpíya Lúta", "All-Nations 9A"],
+  ["Pine Ridge", "Pine Ridge Thorpes", "All-Nations 9A"],
+  ["St. Francis Indian", "St. Francis Indian Warriors", "All-Nations 9A"],
+  ["Todd County", "Todd County Falcons", "All-Nations 9A"],
+  // All-Nations 9B
+  ["Crazy Horse", "Crazy Horse Chiefs", "All-Nations 9B"],
+  ["Crow Creek", "Crow Creek Chieftains", "All-Nations 9B"],
+  ["Dupree/Takini", "Dupree/Takini Tigers", "All-Nations 9B"],
+  ["Flandreau Indian", "Flandreau Indian Indians", "All-Nations 9B"],
+  ["Lower Brule", "Lower Brule Sioux", "All-Nations 9B"],
+  ["Marty", "Marty Braves", "All-Nations 9B"],
+  ["McLaughlin", "McLaughlin Mustangs", "All-Nations 9B"],
+  ["Tiospa Zina", "Tiospa Zina Wambdi", "All-Nations 9B"],
+  ["White River", "White River Tigers", "All-Nations 9B"],
+];
+
+const CLASS_ORDER = ['11AAA','11AA','11A','11B','9AA','9A','9B','All-Nations 9A','All-Nations 9B','Other'];
+const ROSTER = {}; // lowercase name (school, or school + mascot) -> class
+const ROSTER_SCHOOL_OF = {}; // "brandon valley lynx" -> "Brandon Valley"
+for (const [school, full, cls] of ROSTER_2026) { ROSTER[keyOf(school)] = cls; ROSTER[keyOf(full)] = cls; ROSTER_SCHOOL_OF[keyOf(full)] = school; }
+const ROSTER_SCHOOLS = ROSTER_2026.map(r => r[0]).sort((a, b) => b.length - a.length);
+function rosterClass(name){
+  const k = keyOf(name);
+  if (ROSTER[k]) return ROSTER[k];
+  const school = ROSTER_SCHOOLS.find(sc => k.startsWith(keyOf(sc) + ' ')); // name with a mascot on the end
+  return school ? ROSTER[keyOf(school)] : null;
+}
+
+let state = { text: '', picks: {}, cls: null, spots: 16, showAll: false, open: null };
+let model = null;
+
+function parse(text){
+  const teams = {}, errors = [], gameMap = new Map(), alias = {}, records = {}, pairIds = {};
+  const lines = text.split(/\r?\n/);
+  // First pass: aliases, so every later line resolves to one spelling
+  lines.forEach(raw => {
+    const m = raw.trim().match(/^@alias\s+(.+?)\s*=\s*(.+)$/i);
+    if (m) alias[keyOf(m[1])] = m[2].trim();
+  });
+  const canon = name => {
+    let n = name.trim();
+    for (let i = 0; i < 5 && alias[keyOf(n)]; i++) n = alias[keyOf(n)];
+    return n;
+  };
+  const ensure = name => {
+    const n = canon(name), k = keyOf(n);
+    if (!teams[k]) teams[k] = { key:k, name:n, cls: rosterClass(n) || 'Other', clsSet:false, extraW:0, extraL:0, snap:null, full:false, official:null };
+    return teams[k];
+  };
+  lines.forEach((raw, i) => {
+    const line = raw.trim();
+    if (!line || line.startsWith('#') || /^@alias\b/i.test(line)) return;
+    if (/^@official\b/i.test(line)) {
+      const parts = line.slice(9).split('|').map(s => s.trim());
+      if (!parts[0] || isNaN(parseFloat(parts[1]))) { errors.push(`Line ${i+1}: write official seed points like @official Parkston | 46.500.`); return; }
+      ensure(parts[0]).official = parseFloat(parts[1]);
+      return;
+    }
+    if (/^@class\b/i.test(line)) {
+      const parts = line.slice(6).split('|').map(s => s.trim());
+      if (!parts[0] || !parts[1]) { errors.push(`Line ${i+1}: write classes like @class Hamlin | 9AA.`); return; }
+      const tc = ensure(parts[0]); tc.cls = parts[1]; tc.clsSet = true;
+      return;
+    }
+    if (/^@record\b/i.test(line)) {
+      const parts = line.slice(7).split('|').map(s => s.trim());
+      const m = (parts[1] || '').match(/^(\d+)\s*-\s*(\d+)$/);
+      if (!parts[0] || !m) { errors.push(`Line ${i+1}: write records like @record Yankton | 7-2.`); return; }
+      records[ensure(parts[0]).key] = [+m[1], +m[2]]; // later lines win
+      return;
+    }
+    if (/^@team\b/i.test(line)) {
+      const parts = line.slice(5).split('|').map(s => s.trim());
+      if (!parts[0]) { errors.push(`Line ${i+1}: add a team name after @team.`); return; }
+      const t = ensure(parts[0]);
+      t.full = true; // @team means we have this team's own schedule
+      if (parts[1]) { t.cls = parts[1]; t.clsSet = true; }
+      if (parts[2]) {
+        const m = parts[2].match(/^(\d+)\s*-\s*(\d+)$/);
+        if (m) { t.extraW = +m[1]; t.extraL = +m[2]; }
+        else errors.push(`Line ${i+1}: write the extra record like 3-2.`);
+      }
+      return;
+    }
+    const f = line.split(',').map(s => s.trim());
+    if (f.length < 3 || !f[1] || !f[2]) { errors.push(`Line ${i+1}: expected date, away, home, away score, home score.`); return; }
+    const [date, away, home, sa = '', sb = '', flag = ''] = f;
+    if (/^(nv|jv)$/i.test(flag)) return; // non-varsity games don't count toward seed points
+    const played = sa !== '' && sb !== '';
+    if ((sa !== '') !== (sb !== '')) { errors.push(`Line ${i+1}: enter both scores or leave both blank.`); return; }
+    if (played && (isNaN(+sa) || isNaN(+sb))) { errors.push(`Line ${i+1}: scores must be numbers.`); return; }
+    if (played && +sa === +sb) { errors.push(`Line ${i+1}: tied score. Enter the final score after overtime.`); return; }
+    const a = ensure(away), b = ensure(home);
+    if (a.key === b.key) { errors.push(`Line ${i+1}: a team can’t play itself.`); return; }
+    // Same two teams within 3 days = the same game (scoreboard "week of" dates vs exact dates)
+    const pk = [a.key, b.key].sort().join('|');
+    let id = date + '|' + pk;
+    const t0 = Date.parse(date);
+    for (const other of (pairIds[pk] || [])) {
+      const d = Math.abs(Date.parse(gameMap.get(other).date) - t0);
+      if (other === id || d <= 3 * 864e5) { id = other; break; }
+    }
+    if (!(pairIds[pk] || []).includes(id)) (pairIds[pk] ||= []).push(id);
+    const prev = gameMap.get(id);
+    if (prev && prev.played && !played) return; // never let an older "upcoming" line undo a final
+    gameMap.set(id, { id, date, a:a.key, b:b.key, sa: played ? +sa : null, sb: played ? +sb : null, played, nv:false });
+  });
+  // Every team in the built-in class list shows in its class, even before it has games
+  if (text !== SAMPLE) for (const [school, , cls] of ROSTER_2026) {
+    const t = ensure(school);
+    if (!t.clsSet && t.cls === 'Other') t.cls = cls;
+  }
+  const games = [...gameMap.values()].sort((x,y) => x.date.localeCompare(y.date));
+  // A GoBound record snapshot covers games we don't have: snapshot minus the games we do have
+  const have = {};
+  for (const g of games) if (g.played) {
+    const w = g.sa > g.sb ? g.a : g.b, l = w === g.a ? g.b : g.a;
+    (have[w] ||= {w:0,l:0}).w++; (have[l] ||= {w:0,l:0}).l++;
+  }
+  for (const k in records) {
+    teams[k].snapRec = records[k];
+    if (teams[k].full) continue; // own schedule beats a snapshot from someone else's page
+    const h = have[k] || {w:0,l:0};
+    teams[k].snap = records[k];
+    teams[k].extraW = Math.max(0, records[k][0] - h.w);
+    teams[k].extraL = Math.max(0, records[k][1] - h.l);
+  }
+  return { teams, games, errors };
+}
+
+// winnerOf(game) -> team key, or null to leave the game out
+function compute(teams, games, winnerOf){
+  const rec = {};
+  for (const k in teams) rec[k] = { w: teams[k].extraW, l: teams[k].extraL };
+  const results = [];
+  for (const g of games){
+    if (g.nv) continue;
+    const w = winnerOf(g);
+    if (!w) continue;
+    const l = w === g.a ? g.b : g.a;
+    rec[w].w++; rec[l].l++;
+    results.push({ g, w });
+  }
+  const out = {};
+  for (const k in teams){
+    let total = 0, count = 0;
+    const log = [];
+    for (const x of results){
+      if (x.g.a !== k && x.g.b !== k) continue;
+      const opp = x.g.a === k ? x.g.b : x.g.a;
+      const o = rec[opp], gp = o.w + o.l;
+      const pct = gp ? o.w / gp : 0;
+      const won = x.w === k;
+      const p = seedPoints(pct, won);
+      total += p; count++;
+      log.push({ g:x.g, opp, won, pct, oppW:o.w, oppL:o.l, p, predicted: !x.g.played });
+    }
+    const r = rec[k];
+    const bonus = (count > 0 && r.l === 0 && teams[k].cls.toUpperCase() !== '11AAA') ? count : 0;
+    out[k] = { w:r.w, l:r.l, total, count, bonus, spa: count ? (total + bonus) / count : 0, log };
+  }
+  return out;
+}
+
+// Best available seed point number for a team right now
+function rating(t, n){
+  if (t.official != null) return t.official;
+  return t.full && n.count ? n.spa : null;
+}
+const actualWinner = g => g.played ? (g.sa > g.sb ? g.a : g.b) : null;
+
+function build(){
+  const { teams, games, errors } = parse(state.text);
+  const now = compute(teams, games, actualWinner);
+  const auto = {};
+  for (const g of games){
+    if (g.played || g.nv) continue;
+    const A = now[g.a], B = now[g.b];
+    const pa = A.w + A.l ? A.w / (A.w + A.l) : 0, pb = B.w + B.l ? B.w / (B.w + B.l) : 0;
+    const ra = rating(teams[g.a], A), rb = rating(teams[g.b], B);
+    if (ra != null && rb != null && ra !== rb) auto[g.id] = ra > rb ? g.a : g.b;
+    else if (pa !== pb) auto[g.id] = pa > pb ? g.a : g.b;
+    else auto[g.id] = g.b; // home team on a dead tie
+  }
+  // drop picks for games that no longer exist
+  for (const id in state.picks){
+    const g = games.find(x => x.id === id);
+    if (!g || g.played || (state.picks[id] !== g.a && state.picks[id] !== g.b)) delete state.picks[id];
+  }
+  const proj = compute(teams, games, g => g.played ? actualWinner(g) : (state.picks[g.id] || auto[g.id]));
+  // Teams with GoBound standings but not every game entered: start from GoBound's number
+  for (const k in teams) {
+    const t = teams[k];
+    if (t.official == null || !t.snapRec) continue;
+    const gp = t.snapRec[0] + t.snapRec[1], n = now[k];
+    if (n.count >= gp) continue; // all games entered, so our own calculation stands
+    t.incomplete = true;
+    const noBonusClass = t.cls.toUpperCase() === '11AAA';
+    const undef = t.snapRec[1] === 0 && !noBonusClass;
+    const base = (t.official - (undef ? 1 : 0)) * gp; // GoBound's total without the undefeated bonus
+    now[k] = { ...n, spa: t.official, count: gp, bonus: undef ? gp : 0, fromOfficial: true };
+    const p = proj[k], preds = p.log.filter(x => x.predicted);
+    const c = gp + preds.length;
+    const b = (p.l === 0 && !noBonusClass) ? c : 0;
+    proj[k] = { ...p, spa: (base + preds.reduce((a, x) => a + x.p, 0) + b) / c, count: c, bonus: b, fromOfficial: true };
+  }
+  model = { teams, games, errors, now, proj, auto };
+}
+
+// Seed points used for ranking: our calculation, or GoBound's number for a team with no games entered
+function score(k, data){
+  return data[k].count ? data[k].spa : (model.teams[k].official ?? 0);
+}
+function ranks(keys, data){
+  const sorted = [...keys].sort((x,y) => score(y, data) - score(x, data) || model.teams[x].name.localeCompare(model.teams[y].name));
+  const r = {};
+  sorted.forEach((k,i) => {
+    const prev = sorted[i-1];
+    r[k] = (i && score(prev, data).toFixed(3) === score(k, data).toFixed(3)) ? r[prev] : i + 1;
+  });
+  return { sorted, r };
+}
+
+function avgCell(t, d, isProj){
+  if (d.fromOfficial) return d.spa.toFixed(3) + (isProj
+    ? '<span class="chk" title="GoBound’s current seed points plus your picks. Points from earlier games aren’t re-scored as opponents’ records change.">est.</span>'
+    : '<span class="chk" title="Not every game is entered for this team, so GoBound’s number is used">GoBound</span>');
+  if (d.count) return d.spa.toFixed(3) + (d.bonus ? '<span class="bonus">+bonus</span>' : '');
+  if (t.official != null) return `${t.official.toFixed(3)}<span class="chk" title="No games entered for this team, so GoBound’s number is shown">GoBound</span>`;
+  return '—';
+}
+
+function renderStandings(){
+  const { teams, now, proj } = model;
+  const keys = Object.keys(teams).filter(k => teams[k].cls === state.cls);
+  if (!keys.length){ $('standings').innerHTML = '<p class="empty">No teams in this class yet. Add them on the Teams and games tab.</p>'; return; }
+  const N = ranks(keys, now), P = ranks(keys, proj);
+  const withOfficial = keys.filter(k => teams[k].official != null);
+  const checkable = withOfficial.filter(k => now[k].count && !now[k].fromOfficial);
+  const matched = checkable.filter(k => now[k].count && Math.abs(now[k].spa - teams[k].official) < 0.0015);
+  let h = checkable.length ? `<p class="note">${matched.length} of ${checkable.length} teams with games entered match GoBound’s seed points.${matched.length < checkable.length ? ' Teams that don’t usually have a game missing from your data.' : ''}</p>` : '';
+  h += `<table><thead><tr><th>#</th><th class="l">Team</th><th>Now</th><th>Now avg</th><th>Proj.</th><th>Proj. avg</th><th>Move</th></tr></thead><tbody>`;
+  P.sorted.forEach((k, i) => {
+    const n = now[k], p = proj[k], t = teams[k];
+    const move = N.r[k] - P.r[k];
+    const mv = move > 0 ? `<span class="up">▲${move}</span>` : move < 0 ? `<span class="down">▼${-move}</span>` : '<span class="now">–</span>';
+    const open = state.open === k;
+    h += `<tr class="team${open?' open':''}" data-k="${esc(k)}" tabindex="0" aria-expanded="${open}">
+      <td class="rk">${P.r[k]}</td>
+      <td class="l">${esc(t.name)}</td>
+      <td class="now">${n.w}-${n.l}</td>
+      <td class="now">${avgCell(t, n)}${n.count && !n.fromOfficial ? checkMark(t, n) : ''}</td>
+      <td>${p.w}-${p.l}</td>
+      <td class="spa">${avgCell(t, p, true)}</td>
+      <td>${mv}</td></tr>`;
+    if (open) h += `<tr class="detail"><td colspan="7">${renderLog(k)}</td></tr>`;
+    if (state.spots > 0 && i + 1 === state.spots && i < P.sorted.length - 1)
+      h += `<tr class="cutoff"><td colspan="7"><div>Playoff line (top ${state.spots})</div></td></tr>`;
+  });
+  $('standings').innerHTML = h + '</tbody></table>';
+}
+
+function checkMark(t, n){
+  if (t.official == null) return '';
+  if (n.count && Math.abs(n.spa - t.official) < 0.0015) return '<span class="chk" title="Matches GoBound">✓</span>';
+  return `<span class="chk off" title="GoBound shows ${t.official.toFixed(3)}. A game may be missing, or the standings import is older than your games.">GoBound ${t.official.toFixed(3)}</span>`;
+}
+
+function renderLog(k){
+  const p = model.proj[k], T = model.teams;
+  if (!p.log.length) return '<p class="empty">No varsity games yet.</p>';
+  let h = `<table class="log"><tr><th class="l">Date</th><th class="l">Opponent</th><th class="l">Result</th><th>Opp. record</th><th>Opp. win %</th><th>Points</th></tr>`;
+  for (const x of p.log){
+    const g = x.g, home = g.b === k;
+    const score = g.played ? ` ${home ? g.sb : g.sa}-${home ? g.sa : g.sb}` : '';
+    h += `<tr class="${x.predicted ? 'pred' : ''}"><td class="l">${esc(g.date)}</td>
+      <td class="l">${home ? 'vs' : '@'} ${esc(T[x.opp].name)}</td>
+      <td class="l"><span class="${x.won ? 'w' : 'lo'}">${x.won ? 'W' : 'L'}</span>${score}${x.predicted ? ' (pick)' : ''}</td>
+      <td>${x.oppW}-${x.oppL}</td><td>${x.pct.toFixed(3)}</td><td>${x.p}</td></tr>`;
+  }
+  if (model.teams[k].incomplete) return h + `</table><p class="note" style="margin:6px 0 0">Not every game is entered for this team, so its averages start from GoBound’s seed points (${model.teams[k].official.toFixed(3)}) and add your picks.</p>`;
+  h += `<tr><td class="l" colspan="5">Total ${p.total}${p.bonus ? ` + ${p.bonus} undefeated bonus` : ''} ÷ ${p.count} games</td><td><b>${p.spa.toFixed(3)}</b></td></tr></table>`;
+  return h + '<p class="note" style="margin:6px 0 0">Projected view: opponent records include picked games. Italic rows are picks.</p>';
+}
+
+function renderGames(){
+  const { teams, games, now, auto } = model;
+  const list = games.filter(g => !g.played && !g.nv &&
+    (state.showAll || teams[g.a].cls === state.cls || teams[g.b].cls === state.cls));
+  if (!list.length){ $('games').innerHTML = '<p class="empty">No unplayed games for this class. Add games with blank scores on the Teams and games tab.</p>'; return; }
+  let h = '', lastDate = null;
+  for (const g of list){
+    if (g.date !== lastDate){ h += `<div class="date">${esc(g.date)}</div>`; lastDate = g.date; }
+    const pick = state.picks[g.id] || auto[g.id], mine = !!state.picks[g.id];
+    const btn = (k, side) => {
+      const on = pick === k, n = now[k];
+      return `<button class="pick${on ? ' on' : ''}${on && mine ? ' mine' : ''}" data-g="${esc(g.id)}" data-k="${esc(k)}" aria-pressed="${on}">
+        ${esc(teams[k].name)}<small>${side} · ${n.w}-${n.l}${rating(teams[k], n) != null ? ' · ' + rating(teams[k], n).toFixed(3) : ''}</small></button>`;
+    };
+    h += `<div class="game">${btn(g.a,'Away')}<span class="vs">at</span>${btn(g.b,'Home')}</div>`;
+  }
+  $('games').innerHTML = h;
+}
+
+function renderClasses(){
+  const classes = [...new Set(Object.values(model.teams).map(t => t.cls))]
+    .sort((a,b) => (CLASS_ORDER.indexOf(a) + 1 || 99) - (CLASS_ORDER.indexOf(b) + 1 || 99) || a.localeCompare(b));
+  if (!classes.includes(state.cls)) state.cls = classes[0] || null;
+  $('cls').innerHTML = classes.map(c => `<option${c === state.cls ? ' selected' : ''}>${esc(c)}</option>`).join('');
+}
+
+function render(){
+  build();
+  renderClasses();
+  renderStandings();
+  renderGames();
+  $('errors').innerHTML = model.errors.map(e => `<li>${esc(e)}</li>`).join('');
+  $('spots').value = state.spots;
+  $('showAll').checked = state.showAll;
+}
+
+// Persistence: uses Claude artifact storage when available; otherwise use Save/Load file.
+async function save(){
+  if (!window.storage) return;
+  try { await window.storage.set('sdfb:state', JSON.stringify({ text:state.text, picks:state.picks, cls:state.cls, spots:state.spots, showAll:state.showAll }), false); }
+  catch (e) { console.warn('Save failed', e); }
+}
+async function load(){
+  if (!window.storage) return;
+  try {
+    const r = await window.storage.get('sdfb:state', false);
+    if (r && r.value) Object.assign(state, JSON.parse(r.value));
+  } catch (e) { /* nothing saved yet */ }
+}
+const update = () => { render(); save(); };
+
+// Events
+$('standings').addEventListener('click', e => {
+  const row = e.target.closest('tr.team'); if (!row) return;
+  state.open = state.open === row.dataset.k ? null : row.dataset.k; renderStandings();
+});
+$('standings').addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('tr.team')){ e.preventDefault(); e.target.click(); }
+});
+$('games').addEventListener('click', e => {
+  const b = e.target.closest('.pick'); if (!b) return;
+  const id = b.dataset.g, k = b.dataset.k;
+  if (state.picks[id] === k) delete state.picks[id]; // clicking your own pick again returns it to auto
+  else state.picks[id] = k;
+  update();
+});
+$('resetPicks').onclick = () => { state.picks = {}; update(); };
+$('cls').onchange = e => { state.cls = e.target.value; state.open = null; update(); };
+$('spots').onchange = e => { state.spots = Math.max(0, parseInt(e.target.value, 10) || 0); update(); };
+$('showAll').onchange = e => { state.showAll = e.target.checked; update(); };
+
+function showTab(which){
+  for (const t of ['main','import','data']){
+    $('tab-'+t).setAttribute('aria-selected', which === t);
+    $('view-'+t).hidden = which !== t;
+  }
+  if (which === 'data') $('dataText').value = state.text;
+  if (which === 'import' && state.cls && /^(11|9)/.test(state.cls)) $('impClass').value = state.cls;
+}
+$('tab-main').onclick = () => showTab('main');
+$('tab-import').onclick = () => showTab('import');
+$('tab-data').onclick = () => showTab('data');
+$('clearBtn').onclick = () => {
+  if (!confirm('Remove all teams, games and picks?')) return;
+  state.text = ''; state.picks = {}; $('dataText').value = ''; update();
+};
+
+$('apply').onclick = () => {
+  state.text = $('dataText').value; update();
+  if (!model.errors.length) showTab('main');
+};
+$('sampleBtn').onclick = () => {
+  if (!confirm('Replace your teams and games with the sample data?')) return;
+  state.text = SAMPLE; state.picks = {}; $('dataText').value = SAMPLE; update();
+};
+// ---------- Save / open ----------
+function download(name, content, type){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([content], { type }));
+  a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+const today = () => new Date().toISOString().slice(0, 10);
+
+// Full save: everything needed to restore, plus a readable copy of the standings and games
+function saveAll(){
+  if (!$('view-data').hidden) state.text = $('dataText').value;
+  build();
+  const { teams, games, now, proj, auto } = model;
+  const order = Object.keys(teams).sort((a, b) =>
+    (CLASS_ORDER.indexOf(teams[a].cls) + 1 || 99) - (CLASS_ORDER.indexOf(teams[b].cls) + 1 || 99) || proj[b].spa - proj[a].spa);
+  const out = {
+    app: 'sd-football-seed-points', version: 1, savedAt: new Date().toISOString(),
+    settings: { cls: state.cls, spots: state.spots, showAll: state.showAll },
+    text: state.text,      // the data the app reads; this is what Open restores
+    picks: state.picks,    // your overrides; games without one use the auto pick
+    standings: order.map(k => ({
+      team: teams[k].name, class: teams[k].cls,
+      now: { record: `${now[k].w}-${now[k].l}`, seedAvg: now[k].count ? +now[k].spa.toFixed(3) : null },
+      projected: { record: `${proj[k].w}-${proj[k].l}`, seedAvg: proj[k].count ? +proj[k].spa.toFixed(3) : null },
+      goBoundAvg: teams[k].official, estimated: !!proj[k].fromOfficial
+    })),
+    games: games.map(g => ({
+      date: g.date, away: teams[g.a].name, home: teams[g.b].name,
+      awayScore: g.sa, homeScore: g.sb, final: g.played,
+      pick: g.played ? null : teams[state.picks[g.id] || auto[g.id]]?.name ?? null,
+      pickIsYours: !g.played && !!state.picks[g.id]
+    }))
+  };
+  download(`sd-football-seed-points-${today()}.json`, JSON.stringify(out, null, 2), 'application/json');
+}
+
+// Opens our own saves, older saves ({text, picks}), scraper JSON, or plain text data
+async function openFile(file){
+  if (!file) return;
+  const txt = await file.text();
+  let j = null;
+  try { j = JSON.parse(txt); } catch { /* plain text data */ }
+  if (j && Array.isArray(j.teams)) { showTab('import'); showScraperPreview(j, file.name); return; }
+  if (j && typeof j.text !== 'string') { alert(`${file.name} isn’t a file this app can open.`); return; }
+  if (!confirm(`Replace your current data and picks with ${file.name}?`)) return;
+  if (j) {
+    state.text = j.text; state.picks = j.picks || {};
+    if (j.settings) Object.assign(state, { cls: j.settings.cls ?? state.cls, spots: j.settings.spots ?? state.spots, showAll: !!j.settings.showAll });
+  } else { state.text = txt; state.picks = {}; }
+  $('dataText').value = state.text;
+  update(); showTab('main');
+}
+
+$('saveBtn').onclick = saveAll;
+$('exportBtn').onclick = saveAll;
+$('openBtn').onclick = () => $('fileIn').click();
+$('importBtn').onclick = () => $('fileIn').click();
+$('fileIn').onchange = e => { openFile(e.target.files[0]); e.target.value = ''; };
+
+// ---------- CSV export: each team's seed points by week ----------
+// Weeks run Monday-Sunday and are numbered by calendar week from the first game,
+// so a week with no games doesn't shift the later week numbers.
+function weekStart(iso){
+  const d = new Date(iso + 'T12:00:00');
+  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  return d.toISOString().slice(0, 10);
+}
+function exportCsv(){
+  if (!$('view-data').hidden) state.text = $('dataText').value;
+  build();
+  const { teams, games, now, proj } = model;
+  const regular = games.filter(g => !g.nv);
+  if (!regular.length) { alert('There are no games to export yet.'); return; }
+
+  const weeks = [...new Set(regular.map(g => weekStart(g.date)))].sort();
+  const weekHasPicks = weeks.map(w => regular.some(g => !g.played && weekStart(g.date) === w));
+  const md = iso => { const [, m, d] = iso.split('-'); return `${+m}/${+d}`; };
+  const csvCell = v => {
+    if (v == null) return '';
+    const t = String(v);
+    return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t;
+  };
+
+  // Projected ranks within each class
+  const rankOf = {};
+  const byClass = {};
+  for (const k in teams) (byClass[teams[k].cls] ||= []).push(k);
+  for (const c in byClass) Object.assign(rankOf, ranks(byClass[c], proj).r);
+
+  const header = ['Class', 'Proj Rank', 'Team', 'Record', 'Proj Record',
+    ...weeks.map((w, i) => `Wk ${Math.round((Date.parse(w) - Date.parse(weeks[0])) / 6048e5) + 1} (${md(w)})${weekHasPicks[i] ? ' pick' : ''}`),
+    'Total Pts', 'Undefeated Bonus', 'Games', 'Seed Avg Now', 'Proj Seed Avg', 'GoBound Avg', 'Note'];
+  const rows = [header];
+
+  const order = Object.keys(teams)
+    .filter(k => proj[k].count || teams[k].official != null || teams[k].cls !== 'Other')
+    .sort((a, b) => (CLASS_ORDER.indexOf(teams[a].cls) + 1 || 99) - (CLASS_ORDER.indexOf(teams[b].cls) + 1 || 99)
+      || teams[a].cls.localeCompare(teams[b].cls) || rankOf[a] - rankOf[b] || teams[a].name.localeCompare(teams[b].name));
+
+  for (const k of order) {
+    const t = teams[k], n = now[k], p = proj[k];
+    const perWeek = weeks.map(() => []);
+    for (const x of p.log) perWeek[weeks.indexOf(weekStart(x.g.date))].push(x.p);
+    const total = p.log.reduce((a, x) => a + x.p, 0);
+    const note = p.fromOfficial ? 'Not every game entered; averages start from GoBound and add picks'
+      : (t.official != null && n.count && Math.abs(n.spa - t.official) >= 0.0015 ? `Differs from GoBound (${t.official.toFixed(3)})` : '');
+    rows.push([
+      t.cls, rankOf[k], t.name, `${n.w}-${n.l}`, `${p.w}-${p.l}`,
+      ...perWeek.map(v => v.length ? v.reduce((a, b) => a + b, 0) : ''), // two games in one week are added together
+      p.fromOfficial || !p.count ? '' : total, p.fromOfficial ? '' : p.bonus || '', p.fromOfficial ? '' : p.count || '',
+      n.count ? n.spa.toFixed(3) : '', p.count ? p.spa.toFixed(3) : '',
+      t.official != null ? t.official.toFixed(3) : '', note
+    ]);
+  }
+  // Byte-order mark so Excel reads names like "Mahpíya Lúta" correctly
+  download(`sd-football-points-by-week-${today()}.csv`, '\ufeff' + rows.map(r => r.map(csvCell).join(',')).join('\r\n'), 'text/csv');
+}
+$('csvBtn').onclick = exportCsv;
+
+// ---------- GoBound import ----------
+const DATE_RE = /^(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})\b/;
+const SKIP_RE = /(quarterfinal|semifinal|playoff|first round|second round|championship|state final|dakotadome)/i;
+const NOGAME_RE = /^(postponed|cancel+ed|canceled|forfeited?\s*-?\s*no contest)$/i;
+const isRec = t => /^\d+-\d+$/.test(t);
+const isScore = t => /^\d+-\d+/.test(t);
+
+function isoDate(m){
+  const y = m[3].length === 2 ? '20' + m[3] : m[3];
+  return `${y}-${m[1].padStart(2,'0')}-${m[2].padStart(2,'0')}`;
+}
+// True where the opponent name ends and the result/time/record begins
+function isStop(toks, i){
+  const t = toks[i], n = toks[i+1] || '';
+  return (/^[WL]$/.test(t) && isScore(n)) || /^[WL]\d+-\d+/.test(t) || /^\d{1,2}:\d{2}/.test(t) ||
+         isRec(t) || /^(TBA|TBD|Postponed|Cancell?ed)$/i.test(t);
+}
+
+function parseRow(raw){
+  const clean = s => s.replace(/opponent-logo/gi, ' ').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+  const line = raw.replace(/\u00a0/g, ' ');
+  const dm = line.trim().match(DATE_RE);
+  if (!dm) return null;
+  let ha, opp, rest;
+  if (line.includes('\t')) {
+    const cells = line.split('\t').map(clean).filter(Boolean);
+    const first = cells[0].slice(dm[0].length).trim();
+    cells.splice(0, 1, ...(first ? [first] : []));
+    const m = (cells[0] || '').match(/^(vs\.?|@|at)\s*(.*)$/i);
+    if (!m) return null;
+    ha = /^v/i.test(m[1]) ? 'home' : 'away';
+    if (m[2]) { opp = m[2]; rest = cells.slice(1); } else { opp = cells[1]; rest = cells.slice(2); }
+    rest = rest.join(' ').split(' ').filter(Boolean);
+    // a cell can still carry the result if the opponent and result shared a cell
+    const ot = (opp || '').split(' ');
+    const cut = ot.findIndex((_, i) => isStop(ot, i));
+    if (cut > 0) { rest = ot.slice(cut).concat(rest); opp = ot.slice(0, cut).join(' '); }
+  } else {
+    const toks = clean(line).split(' ').slice(1);
+    if (!/^(vs\.?|@|at)$/i.test(toks[0] || '')) return null;
+    ha = /^v/i.test(toks[0]) ? 'home' : 'away';
+    let i = 1; const name = [];
+    while (i < toks.length && !isStop(toks, i)) name.push(toks[i++]);
+    opp = name.join(' '); rest = toks.slice(i);
+  }
+  if (!opp) return null;
+  const restText = rest.join(' ');
+  let result = null, oppRec = null, k = 0;
+  for (; k < rest.length; k++) {
+    let m;
+    if (/^[WL]$/.test(rest[k]) && (m = (rest[k+1] || '').match(/^(\d+)-(\d+)/))) { result = { won: rest[k] === 'W', x:+m[1], y:+m[2] }; k += 2; break; }
+    if ((m = rest[k].match(/^([WL])(\d+)-(\d+)/))) { result = { won: m[1] === 'W', x:+m[2], y:+m[3] }; k += 1; break; }
+  }
+  const after = result ? rest.slice(k) : rest;
+  const r = after.find(isRec);
+  if (r) oppRec = r.split('-').map(Number);
+  return {
+    date: isoDate(dm), ha, opp, result, oppRec,
+    playoff: SKIP_RE.test(restText),
+    noGame: rest.some(t => NOGAME_RE.test(t)) && !result,
+    jv: /\b(JV|junior varsity|C squad|sophomore)\b/i.test(opp)
+  };
+}
+
+function parseGoBound(text, fallbackTeam){
+  const blocks = []; let pending = [];
+  for (const raw of text.split(/\r?\n/)) {
+    const sp = raw.match(/Seed Point Average for (.+?):\s*[\d.]*/i);
+    if (sp) { blocks.push({ team: sp[1].trim(), rows: pending }); pending = []; continue; }
+    const row = parseRow(raw);
+    if (row) pending.push(row);
+  }
+  if (pending.length) blocks.push({ team: fallbackTeam.trim(), rows: pending });
+  return blocks.filter(b => b.rows.length);
+}
+
+// Names that look like the same school spelled two ways ("Pierre" vs "Pierre T.F. Riggs")
+function lookalikes(names, existing){
+  const out = [], seen = new Set();
+  const norm = n => keyOf(n).replace(/[^a-z0-9 ]/g, '');
+  for (const n of names) for (const e of existing) {
+    if (keyOf(n) === keyOf(e)) continue;
+    const a = norm(n), b = norm(e);
+    const short = a.length < b.length ? a : b, long = a.length < b.length ? b : a;
+    if (short.length >= 4 && long.startsWith(short + ' ')) {
+      const id = [n, e].sort().join('|');
+      if (!seen.has(id)) { seen.add(id); out.push({ from: n, to: e }); }
+    }
+  }
+  return out;
+}
+
+let pendingImport = null;
+
+function readSchedule(text, blocks){
+  const cls = $('impClass').value;
+  const box = $('impPreview');
+  if (blocks.some(b => !b.team)) {
+    box.innerHTML = `<div class="warn">Found games but not the team’s name. Type it in the Team name box and choose Read games again.</div>`;
+    return;
+  }
+  const lines = [], allNames = new Set();
+  let h = '';
+  for (const b of blocks) {
+    const used = b.rows.filter(r => !r.playoff && !r.noGame && !r.jv);
+    const skipped = b.rows.length - used.length;
+    const played = used.filter(r => r.result).length;
+    lines.push(`# Imported from GoBound: ${b.team} (${new Date().toLocaleDateString()})`, `@team ${b.team} | ${rosterClass(b.team) || cls}`);
+    allNames.add(b.team);
+    const recs = {};
+    for (const r of used) {
+      allNames.add(r.opp);
+      let us = '', them = '';
+      if (r.result) { // the W/L letter decides the winner, whatever order the score is in
+        const hi = Math.max(r.result.x, r.result.y), lo = Math.min(r.result.x, r.result.y);
+        us = r.result.won ? hi : lo; them = r.result.won ? lo : hi;
+        if (hi === lo) { us = r.result.won ? 1 : 0; them = r.result.won ? 0 : 1; } // forfeit with no score
+      }
+      const away = r.ha === 'away' ? b.team : r.opp, home = r.ha === 'away' ? r.opp : b.team;
+      const as = r.ha === 'away' ? us : them, hs = r.ha === 'away' ? them : us;
+      lines.push(`${r.date}, ${away}, ${home}, ${as}, ${hs}`);
+      if (r.oppRec) recs[r.opp] = r.oppRec;
+    }
+    for (const o in recs) lines.push(`@record ${o} | ${recs[o][0]}-${recs[o][1]}`);
+    lines.push('');
+    h += `<div class="imp-team"><h3>${esc(b.team)} <span class="note">${esc(cls)}</span></h3>
+      <p class="note" style="margin:0 0 6px">${used.length} games: ${played} played, ${used.length - played} still to play${skipped ? `. Skipped ${skipped} playoff, cancelled or JV game${skipped > 1 ? 's' : ''}.` : '.'}</p>
+      <table class="log"><tr><th class="l">Date</th><th class="l">Opponent</th><th class="l">Result</th><th>Opp. record</th></tr>
+      ${used.map(r => `<tr><td class="l">${r.date}</td><td class="l">${r.ha === 'home' ? 'vs' : '@'} ${esc(r.opp)}</td>
+        <td class="l">${r.result ? `<span class="${r.result.won ? 'w' : 'lo'}">${r.result.won ? 'W' : 'L'}</span> ${r.result.x}-${r.result.y}` : '<span class="now">upcoming</span>'}</td>
+        <td>${r.oppRec ? r.oppRec.join('-') : '—'}</td></tr>`).join('')}
+      </table></div>`;
+  }
+  const existing = state.text === SAMPLE ? [] : Object.values(model.teams).map(t => t.name);
+  const names = [...allNames];
+  const dupes = lookalikes(names, [...new Set([...existing, ...names])]);
+  if (dupes.length) {
+    h += `<div class="warn">These look like the same team spelled two ways. Checked pairs are merged.
+      ${dupes.map((d, i) => `<label><input type="checkbox" class="dupe" data-i="${i}" checked> ${esc(d.from)} = ${esc(d.to)}</label>`).join('')}</div>`;
+  }
+  if (state.text === SAMPLE) h += `<div class="ok">The sample teams will be replaced with this import.</div>`;
+  h += `<div class="row" style="margin-top:10px"><button class="btn primary" id="impAdd">Add to my data</button>
+        <span class="note" style="margin:0">Re-importing a team later updates its scores.</span></div>`;
+  box.innerHTML = h;
+  pendingImport = { build: () => lines, dupes, cls };
+  $('impAdd').onclick = commitImport;
+}
+
+function commitImport(){
+  if (!pendingImport) return;
+  const { dupes, cls } = pendingImport;
+  const lines = pendingImport.build();
+  const chosen = [...document.querySelectorAll('.dupe')].filter(c => c.checked).map(c => dupes[+c.dataset.i]);
+  // keep the shorter spelling as the main name
+  const aliasLines = chosen.map(d => {
+    const [long, short] = d.from.length > d.to.length ? [d.from, d.to] : [d.to, d.from];
+    return `@alias ${long} = ${short}`;
+  });
+  const replace = pendingImport.replace || state.text === SAMPLE;
+  const base = replace ? '' : state.text.replace(/\s*$/, '\n\n');
+  if (state.text === SAMPLE) state.picks = {}; // picks for games that no longer exist are dropped automatically
+  state.text = base + [...aliasLines, ...lines].join('\n');
+  if (cls && cls !== 'Other') state.cls = cls;
+  pendingImport = null; pasteHtml = '';
+  $('impText').value = ''; $('impTeam').value = '';
+  $('impPreview').innerHTML = '<div class="ok">Added. Paste the next week or team, or check the Standings and picks tab.</div>';
+  update();
+}
+
+
+// ---------- Weekly scoreboard import ----------
+let pasteHtml = '';
+const MONTHS = 'january|february|march|april|may|june|july|august|september|october|november|december';
+const pairKeyOf = (a, b) => [keyOf(a), keyOf(b)].sort().join('|');
+
+// "Hill City logo Hill City" -> "Hill City"
+function teamFromCell(s){
+  s = s.replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+  const i = s.toLowerCase().lastIndexOf(' logo ');
+  if (i >= 0) return s.slice(i + 6).trim();
+  s = s.replace(/\s*logo$/i, '');
+  const w = s.split(' ');
+  if (w.length % 2 === 0) {
+    const h = w.length / 2;
+    if (w.slice(0, h).join(' ') === w.slice(h).join(' ')) return w.slice(h).join(' ');
+  }
+  return s;
+}
+
+function lineDate(line){
+  let m = line.match(new RegExp(`\\b(${MONTHS})\\s+(\\d{1,2}),?\\s+(\\d{4})`, 'i'));
+  if (m) {
+    const mo = MONTHS.split('|').indexOf(m[1].toLowerCase()) + 1;
+    return `${m[3]}-${String(mo).padStart(2,'0')}-${m[2].padStart(2,'0')}`;
+  }
+  m = line.trim().match(/^(?:\w+,?\s+)?(\d{1,2})\/(\d{1,2})\/(\d{4}|\d{2})\s*$/);
+  return m ? isoDate([null, m[1], m[2], m[3]]) : null;
+}
+
+function parseScoreboard(text, fallbackDate){
+  const rows = [];
+  let date = fallbackDate;
+  for (const raw of text.split(/\r?\n/)) {
+    if (!/\svs\.?\s/i.test(raw)) { const d = lineDate(raw); if (d) date = d; continue; }
+    const cells = raw.split('\t');
+    const idx = cells.findIndex(c => /\svs\.?\s/i.test(c));
+    const m = cells[idx].match(/^(.*?)\s+vs\.?\s+(.*)$/i);
+    if (!m) continue;
+    const away = teamFromCell(m[1]), home = teamFromCell(m[2]);
+    const after = cells.slice(idx + 1);
+    const fi = after.findIndex(c => /\bfinal\b/i.test(c));
+    const scoreText = fi >= 0 ? after.slice(fi).join(' ').replace(/^.*?\bfinal\b/i, '') : '';
+    const sm = scoreText.match(/(\d+)\s*-\s*(\d+)/);
+    const restText = after.join(' ');
+    rows.push({
+      date, away, home,
+      final: fi >= 0 && !!sm,
+      hi: sm ? Math.max(+sm[1], +sm[2]) : null, lo: sm ? Math.min(+sm[1], +sm[2]) : null,
+      skip: SKIP_RE.test(restText) || /\b(postponed|cancell?ed)\b/i.test(restText) || /\b(JV|junior varsity)\b/i.test(away + ' ' + home),
+      winner: null, auto: false
+    });
+  }
+  return rows;
+}
+
+// The copied page HTML still has the logo images; the "winning team" logo is the same image as one team's logo
+function winnersFromHtml(html){
+  const map = {};
+  if (!html) return map;
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const srcOf = i => (i.getAttribute('src') || '').split('?')[0];
+  for (const tr of doc.querySelectorAll('tr')) {
+    const imgs = [...tr.querySelectorAll('img')];
+    const win = imgs.find(i => /winn/i.test((i.alt || '') + ' ' + (i.title || '') + ' ' + (i.className || '')));
+    if (!win) continue;
+    const logos = imgs.filter(i => i !== win).slice(0, 2);
+    if (logos.length < 2) continue;
+    const names = logos.map(i => (i.alt || i.title || '').replace(/\s*logo\s*$/i, '').trim());
+    const hits = logos.filter(i => srcOf(i) && srcOf(i) === srcOf(win));
+    if (hits.length === 1 && names[0] && names[1]) map[pairKeyOf(names[0], names[1])] = names[logos.indexOf(hits[0])];
+  }
+  return map;
+}
+
+function readScoreboard(rows){
+  const box = $('impPreview');
+  const used = rows.filter(r => !r.skip);
+  if (used.some(r => !r.date)) { box.innerHTML = '<div class="warn">Set the Week of date so these games can be placed on the schedule, then choose Read games again.</div>'; return; }
+  const wins = winnersFromHtml(pasteHtml);
+  for (const r of used) {
+    const w = wins[pairKeyOf(r.away, r.home)];
+    if (r.final && w) { r.winner = keyOf(w) === keyOf(r.away) ? 'away' : 'home'; r.auto = true; }
+  }
+  const known = state.text === SAMPLE ? parse('').teams : model.teams;
+  const isNew = n => { const t = known[keyOf(n)]; return !t || t.cls === 'Other'; };
+  const newTeams = [...new Set(used.flatMap(r => [r.away, r.home]).filter(isNew))].sort();
+  const newCls = Object.fromEntries(newTeams.map(n => [n, 'Other']));
+  const clsOpts = sel => CLASS_ORDER.map(c => `<option${c === sel ? ' selected' : ''}>${c}</option>`).join('');
+
+  const draw = () => {
+    const open = used.filter(r => r.final && !r.winner).length;
+    let h = `<p class="note" style="margin:0 0 6px">${used.length} games: ${used.filter(r => r.final).length} final, ${used.filter(r => !r.final).length} still to play.
+      ${rows.length - used.length ? `Skipped ${rows.length - used.length} playoff, cancelled or JV game(s).` : ''}</p>`;
+    h += open ? `<div class="warn">Click the winner of ${open} game${open > 1 ? 's' : ''}. The copied text shows the score but not which team won.</div>`
+              : (used.some(r => r.auto) ? '<div class="ok">Winners were read from the team logos. Check them and click to change any.</div>' : '');
+    let lastDate = null;
+    used.forEach((r, i) => {
+      if (r.date !== lastDate) { h += `<div class="date">${esc(r.date)}</div>`; lastDate = r.date; }
+      const btn = side => {
+        const name = side === 'away' ? r.away : r.home, on = r.winner === side;
+        return `<button class="pick${on ? ' on' : ''}" data-i="${i}" data-side="${side}" ${r.final ? '' : 'disabled'} aria-pressed="${on}">${esc(name)}
+          <small>${r.final ? (on ? `Won ${r.hi}-${r.lo}` : (r.winner ? `Lost ${r.lo}-${r.hi}` : 'Click if winner')) : 'Upcoming'}</small></button>`;
+      };
+      h += `<div class="game">${btn('away')}<span class="vs">at</span>${btn('home')}</div>`;
+    });
+    if (newTeams.length) {
+      h += `<div class="imp-team" style="margin-top:14px"><h3>Teams not in the class list</h3>
+        <p class="note" style="margin:0 0 6px">Usually out-of-state or co-op name changes. Leave as Other, or set a class. If one is a different spelling of a listed team, fix it with an @alias line on the Teams and games tab.</p>
+        <label class="field" style="margin-bottom:8px">Set all to <select id="sbAll"><option value="">—</option>${clsOpts('')}</select></label>
+        <table class="log">${newTeams.map((n, j) => `<tr><td class="l">${esc(n)}</td><td><select class="sbCls" data-j="${j}">${clsOpts(newCls[n])}</select></td></tr>`).join('')}</table></div>`;
+    }
+    if (state.text === SAMPLE) h += `<div class="ok">The sample teams will be replaced with this import.</div>`;
+    h += `<div class="row" style="margin-top:10px"><button class="btn primary" id="impAdd" ${open ? 'disabled style="opacity:.5"' : ''}>Add to my data</button>
+          <span class="note" style="margin:0">Re-importing a week updates its scores.</span></div>`;
+    box.innerHTML = h;
+    box.querySelectorAll('.pick').forEach(b => b.onclick = () => { used[+b.dataset.i].winner = b.dataset.side; used[+b.dataset.i].auto = false; draw(); });
+    box.querySelectorAll('.sbCls').forEach(sel => sel.onchange = () => { newCls[newTeams[+sel.dataset.j]] = sel.value; });
+    const all = $('sbAll');
+    if (all) all.onchange = () => { if (!all.value) return; newTeams.forEach(n => newCls[n] = all.value); draw(); };
+    if (!open) $('impAdd').onclick = commitImport;
+  };
+
+  pendingImport = {
+    dupes: [], cls: $('impClass').value,
+    build: () => {
+      const lines = [`# Imported scoreboard (${new Date().toLocaleDateString()})`];
+      for (const n of newTeams) if (newCls[n] !== 'Other') lines.push(`@class ${n} | ${newCls[n]}`);
+      for (const r of used) {
+        if (!r.final) { lines.push(`${r.date}, ${r.away}, ${r.home}, ,`); continue; }
+        const [as, hs] = r.winner === 'away' ? [r.hi, r.lo] : [r.lo, r.hi];
+        lines.push(`${r.date}, ${r.away}, ${r.home}, ${as}, ${hs}`);
+      }
+      return lines.concat('');
+    }
+  };
+  draw();
+}
+
+
+// ---------- Standings import ----------
+function parseStandings(text){
+  const rows = [];
+  for (const raw of text.split(/\r?\n/)) {
+    const cells = raw.split('\t').map(c => c.replace(/\u00a0/g, ' ').trim());
+    if (!/^\d+$/.test(cells[0] || '')) continue;
+    let name, w, l, pts;
+    if (cells.length > 5) {
+      [, name, w, l] = cells;
+      pts = cells.slice(5).filter(Boolean)[0];
+    } else {
+      const m = raw.replace(/\u00a0/g, ' ').trim().match(/^\d+\s+(.+?)\s+(\d+)\s+(\d+)\s+(?:1\.000|0?\.\d{3})\s+(\d+\.\d+)/);
+      if (!m) continue;
+      [, name, w, l, pts] = m;
+    }
+    if (!name || !/^\d+$/.test(w) || !/^\d+$/.test(l) || !/^\d+(\.\d+)?$/.test(pts || '')) continue;
+    rows.push({ name, w:+w, l:+l, pts:+pts });
+  }
+  return rows;
+}
+
+function readStandings(rows){
+  const fallback = $('impClass').value;
+  const clsOf = n => rosterClass(n) || (model.teams[keyOf(n)] && model.teams[keyOf(n)].cls !== 'Other' ? model.teams[keyOf(n)].cls : null);
+  const counts = {};
+  rows.forEach(r => { const c = clsOf(r.name); if (c) counts[c] = (counts[c] || 0) + 1; });
+  const mainCls = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0] || fallback;
+  const unknown = rows.filter(r => !clsOf(r.name));
+  let h = `<p class="note" style="margin:0 0 6px">Standings for ${rows.length} teams${mainCls ? ` in ${esc(mainCls)}` : ''}. Records fill in opponents’ win percentages, and the seed points are used to check your games and for auto picks.</p>`;
+  if (unknown.length) h += `<div class="warn">Not in the class list, will be set to ${esc(mainCls)}: ${unknown.map(r => esc(r.name)).join(', ')}.</div>`;
+  h += `<table class="log"><tr><th class="l">Team</th><th>Record</th><th>GoBound pts</th><th>Your data</th></tr>`;
+  for (const r of rows) {
+    const t = model.teams[keyOf(r.name)], n = t && model.now[t.key];
+    const mine = n && n.count ? n.spa.toFixed(3) : '—';
+    const ok = n && n.count && Math.abs(n.spa - r.pts) < 0.0015;
+    h += `<tr><td class="l">${esc(r.name)}</td><td>${r.w}-${r.l}</td><td>${r.pts.toFixed(3)}</td><td>${mine}${n && n.count ? (ok ? ' <span class="chk">✓</span>' : '') : ''}</td></tr>`;
+  }
+  h += `</table><div class="row" style="margin-top:10px"><button class="btn primary" id="impAdd">Add to my data</button>
+        <span class="note" style="margin:0">Re-import standings each week to keep them current.</span></div>`;
+  $('impPreview').innerHTML = h;
+  pendingImport = {
+    dupes: [], cls: mainCls,
+    build: () => [`# Standings imported ${new Date().toLocaleDateString()}`,
+      ...unknown.map(r => `@class ${r.name} | ${mainCls}`),
+      ...rows.flatMap(r => [`@record ${r.name} | ${r.w}-${r.l}`, `@official ${r.name} | ${r.pts.toFixed(3)}`]), '']
+  };
+  $('impAdd').onclick = commitImport;
+}
+
+function readImport(){
+  const text = $('impText').value, box = $('impPreview');
+  if (!text.trim()) { box.innerHTML = '<p class="empty">Paste a scoreboard or schedule first.</p>'; return; }
+  const blocks = parseGoBound(text, $('impTeam').value);
+  const standings = parseStandings(text);
+  if (standings.length >= 2) return readStandings(standings);
+  if (blocks.length) return readSchedule(text, blocks);
+  const rows = parseScoreboard(text, $('impDate').value);
+  if (rows.length) return readScoreboard(rows);
+  box.innerHTML = '<div class="warn">Nothing recognized. Copy the standings table, the scoreboard rows (Team vs. Team … FINAL … score) or a whole team schedule page and paste again.</div>';
+}
+
+// ---------- Assign classes from a standings page ----------
+function assignClasses(){
+  let cur = $('asgClass').value;
+  const names = Object.values(model.teams).map(t => t.name).concat(ROSTER_SCHOOLS)
+    .filter((v, i, a) => a.indexOf(v) === i).sort((a, b) => b.length - a.length);
+  const found = new Map();
+  for (const raw of $('asgText').value.split(/\r?\n/)) {
+    const line = raw.replace(/\s+/g, ' ').trim();
+    if (!line) continue;
+    const hm = line.match(/^(11AAA|11AA|11A|11B|9AA|9A|9B|All-Nations 9A|All-Nations 9B)$/i);
+    if (hm) { cur = CLASS_ORDER.find(c => c.toLowerCase() === hm[1].toLowerCase()) || hm[1]; continue; }
+    if (/varsity|schedule|past seasons|^t?eams$/i.test(line)) continue;
+    // a team you already have (or a listed school) named anywhere in the line
+    const hit = names.find(n => new RegExp(`(?<![A-Za-z0-9])${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-z0-9])`, 'i').test(line));
+    if (hit) { found.set(hit, cur); continue; }
+    // "School Mascot" line for a school we haven't seen: drop the mascot
+    if (!/\d/.test(line) && line.includes(' ')) found.set(line.replace(/\s+\S+$/, ''), cur);
+  }
+  if (!found.size) { $('asgOut').innerHTML = '<div class="warn">No team names found. Paste the GoBound teams page, a standings page, or one team name per line.</div>'; return; }
+  const base = state.text === SAMPLE ? '' : state.text.replace(/\s*$/, '\n\n');
+  if (state.text === SAMPLE) state.picks = {};
+  state.text = base + ['# Class assignments', ...[...found].map(([n, c]) => `@class ${n} | ${c}`)].join('\n') + '\n';
+  const counts = {};
+  for (const c of found.values()) counts[c] = (counts[c] || 0) + 1;
+  $('asgOut').innerHTML = `<div class="ok">Set ${found.size} teams: ${Object.entries(counts).map(([c, n]) => `${n} in ${esc(c)}`).join(', ')}.</div>`;
+  $('asgText').value = '';
+  update();
+}
+$('asgRun').onclick = assignClasses;
+$('impText').addEventListener('paste', e => { pasteHtml = e.clipboardData.getData('text/html') || ''; });
+{ // default "week of" to the most recent Friday
+  const d = new Date(); d.setDate(d.getDate() - ((d.getDay() + 2) % 7));
+  $('impDate').value = d.toISOString().slice(0, 10);
+}
+
+// ---------- GoBoundScraper JSON import ----------
+// Turns the scraper's JSON into the same text lines the rest of the app reads.
+function scraperJsonToLines(data){
+  const teams = data.teams || [];
+  // Other teams' schedules show each school's plain name (no mascot); use it when we can
+  const oppText = {};
+  for (const t of teams) for (const g of t.games || []) if (g.opponentId && g.opponent && !oppText[g.opponentId]) oppText[g.opponentId] = g.opponent;
+  const nameOf = t => {
+    if (t.name && t.name !== t.fullName) return t.name;              // from "Seed Point Average for X"
+    if (oppText[t.id]) return oppText[t.id];                           // as opponents list it
+    const school = ROSTER_SCHOOL_OF[keyOf(t.fullName || t.name || '')]; // built-in class list
+    return school || t.name || t.fullName || t.id;
+  };
+  const byId = {};
+  for (const t of teams) byId[t.id] = nameOf(t).replace(/,/g, '');
+
+  const stamp = data.generatedAt ? new Date(data.generatedAt).toLocaleString() : 'unknown time';
+  const lines = [`# Imported from GoBoundScraper (${data.season || 'season ?'}), data from ${stamp}`];
+  for (const t of teams) {
+    lines.push(`@team ${byId[t.id]} | ${t.class || 'Other'}`);
+    if (t.seedPointAverage != null) lines.push(`@official ${byId[t.id]} | ${Number(t.seedPointAverage).toFixed(3)}`);
+  }
+  const outside = {}; // opponents not on the teams page (out of state, etc.): keep their record
+  const stats = { games: 0, played: 0, skipped: 0 };
+  for (const t of teams) {
+    const name = byId[t.id];
+    for (const g of t.games || []) {
+      if (g.playoff || /\b(JV|junior varsity)\b/i.test(g.opponent || '')) { stats.skipped++; continue; }
+      const known = g.opponentId && byId[g.opponentId];
+      const opp = (known || g.opponent || '').replace(/,/g, '');
+      if (!opp || !g.date) { stats.skipped++; continue; }
+      if (!known && g.opponentRecord) outside[opp] = g.opponentRecord;
+      let us = '', them = '';
+      if (g.result === 'W' || g.result === 'L') {
+        us = g.teamScore; them = g.opponentScore;
+        if (us == null || them == null || us === them) { us = g.result === 'W' ? 1 : 0; them = g.result === 'W' ? 0 : 1; } // forfeit / no score
+        stats.played++;
+      }
+      const away = g.homeAway === 'away';
+      lines.push(`${g.date}, ${away ? name : opp}, ${away ? opp : name}, ${away ? us : them}, ${away ? them : us}`);
+      stats.games++;
+    }
+  }
+  for (const o in outside) lines.push(`@record ${o} | ${outside[o]}`);
+  return { lines: lines.concat(''), stats };
+}
+
+function showScraperPreview(data, fileName){
+  const teams = data.teams || [];
+  if (!teams.length) { $('impPreview').innerHTML = '<div class="warn">That JSON file has no teams. Run the scraper again and check its warnings.</div>'; return; }
+  const { lines, stats } = scraperJsonToLines(data);
+  const perClass = {};
+  for (const t of teams) {
+    const c = t.class || 'Other';
+    perClass[c] ||= { teams: 0, games: 0, avg: 0 };
+    perClass[c].teams++; perClass[c].games += (t.games || []).length;
+    if (t.seedPointAverage != null) perClass[c].avg++;
+  }
+  const order = Object.keys(perClass).sort((a, b) => (CLASS_ORDER.indexOf(a) + 1 || 99) - (CLASS_ORDER.indexOf(b) + 1 || 99));
+  const empty = teams.filter(t => !(t.games || []).length);
+  let h = `<p class="note" style="margin:0 0 6px">${esc(fileName || 'JSON file')}: ${teams.length} teams, data from ${esc(data.generatedAt ? new Date(data.generatedAt).toLocaleString() : 'unknown time')}.
+    ${stats.played} results and ${stats.games - stats.played} upcoming game entries (each game appears on both teams’ schedules; duplicates are merged).
+    ${stats.skipped ? `Skipped ${stats.skipped} playoff or JV entries.` : ''}</p>
+    <table class="log"><tr><th class="l">Class</th><th>Teams</th><th>Game entries</th><th>With seed avg</th></tr>
+    ${order.map(c => `<tr><td class="l">${esc(c)}</td><td>${perClass[c].teams}</td><td>${perClass[c].games}</td><td>${perClass[c].avg}</td></tr>`).join('')}</table>`;
+  if (empty.length) h += `<div class="warn">${empty.length} team${empty.length > 1 ? 's have' : ' has'} no games in the file: ${empty.slice(0, 8).map(t => esc(t.fullName || t.name)).join(', ')}${empty.length > 8 ? '…' : ''}. The schedule page format may need a parser fix.</div>`;
+  if ((data.warnings || []).length) h += `<p class="note">The scraper reported ${data.warnings.length} warning(s).</p>`;
+  h += `<div class="warn">This replaces all teams and games currently loaded. Your picks are kept for games that are still unplayed.</div>
+    <div class="row" style="margin-top:10px"><button class="btn primary" id="impAdd">Replace my data</button></div>`;
+  $('impPreview').innerHTML = h;
+  pendingImport = { replace: true, dupes: [], cls: state.cls, build: () => lines };
+  $('impAdd').onclick = commitImport;
+}
+
+$('jsonBtn').onclick = () => $('jsonIn').click();
+$('jsonIn').onchange = e => { openFile(e.target.files[0]); e.target.value = ''; };
+document.addEventListener('dragover', e => { if ([...e.dataTransfer.types].includes('Files')) e.preventDefault(); });
+document.addEventListener('drop', e => {
+  const f = e.dataTransfer.files[0];
+  if (f && /\.(json|txt)$/i.test(f.name)) { e.preventDefault(); openFile(f); }
+});
+
+$('impRead').onclick = readImport;
+$('impClear').onclick = () => { $('impText').value = ''; $('impPreview').innerHTML = ''; pendingImport = null; pasteHtml = ''; };
+
+load().then(render);
+</script>
+</body>
+</html>
