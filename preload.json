@@ -1,0 +1,4048 @@
+{
+  "app": "sd-football-seed-points",
+  "version": 1,
+  "savedAt": "2026-10-12T14:13:17.386Z",
+  "settings": {
+    "cls": "9AA",
+    "spots": 16,
+    "showAll": false
+  },
+  "text": "\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Stanley County, Bon Homme, 0, 48\n2026-10-09, Parkston, Hill City, 54, 24\n2026-10-09, Redfield, Great Plains Lutheran, 0, 42\n2026-10-09, Florence/Henry, Estelline/Hendricks, 8, 48\n2026-10-09, Baltic, Garretson, 6, 35\n2026-10-09, Castlewood, Hamlin, 46, 34\n2026-10-09, Waverly-South Shore, Britton-Hecla, 0, 44\n2026-10-09, Gregory, Kimball/White Lake, 8, 42\n2026-10-09, New Underwood, Lyman, 6, 41\n2026-10-09, Tripp-Delmont/Armour/Andes Central/Dakota Christian, Platte-Geddes, 8, 43\n2026-10-09, Webster Area, Sisseton, 12, 39\n2026-10-09, Sioux Falls Lutheran, Centerville, 14, 58\n2026-10-09, Bridgewater-Emery/Ethan, Viborg-Hurley, 8, 22\n2026-10-09, Waubay/Summit, Wilmot, 46, 20\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Wall, Lead-Deadwood, 36, 7\n2026-10-09, Bennett County, New Underwood, 42, 6\n2026-10-09, Sioux Falls Lutheran, Baltic, 22, 20\n2026-10-09, Garretson, Bridgewater-Emery/Ethan, 36, 12\n2026-10-09, Sisseton, Estelline/Hendricks, 0, 44\n2026-10-09, Bon Homme, Gregory, 55, 6\n2026-10-09, Viborg-Hurley, Hanson, 32, 30\n2026-10-09, Waubay/Summit, Florence/Henry, 42, 12\n2026-10-09, Hamlin, Britton-Hecla, 34, 22\n2026-10-09, Scotland/Menno, Tripp-Delmont/Armour/Andes Central/Dakota Christian, 38, 12\n2026-10-09, Parkston, Platte-Geddes, 30, 6\n2026-10-09, Hill City, Stanley County, 20, 28\n2026-10-09, Great Plains Lutheran, Webster Area, 34, 0\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Platte-Geddes, Sioux Falls Lutheran, 50, 14\n2026-10-09, Stanley County, Bennett County, 6, 24\n2026-10-09, New Underwood, Hill City, 26, 42\n2026-10-09, Lead-Deadwood, Philip, 9, 12\n2026-10-09, Scotland/Menno, Bon Homme, 12, 60\n2026-10-09, Estelline/Hendricks, Castlewood, 8, 58\n2026-10-09, Hanson, Garretson, 30, 37\n2026-10-09, Baltic, Hamlin, 6, 43\n2026-10-09, Bridgewater-Emery/Ethan, Parkston, 12, 56\n2026-10-09, Great Plains Lutheran, Sisseton, 36, 14\n2026-10-09, Tripp-Delmont/Armour/Andes Central/Dakota Christian, Burke, 44, 20\n2026-10-09, Redfield, Waubay/Summit, 0, 50\n2026-10-09, Florence/Henry, Waverly-South Shore, 26, 22\n2026-10-09, Britton-Hecla, Webster Area, 59, 22\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Estelline/Hendricks, Elkton-Lake Benton, 12, 38\n2026-10-09, Bridgewater-Emery/Ethan, Sioux Falls Lutheran, 22, 14\n2026-10-09, Hill City, Timber Lake, 7, 50\n2026-10-09, Hanson, Scotland/Menno, 32, 34\n2026-10-09, New Underwood, Philip, 0, 19\n2026-10-09, Britton-Hecla, Florence/Henry, 63, 8\n2026-10-09, Bon Homme, Garretson, 40, 8\n2026-10-09, Tripp-Delmont/Armour/Andes Central/Dakota Christian, Gregory, 6, 40\n2026-10-09, Webster Area, Redfield, 8, 20\n2026-10-09, Irene-Wakonda, Viborg-Hurley, 0, 52\n2026-10-09, Sisseton, Waubay/Summit, 0, 52\n2026-10-09, Hamlin, De Smet, 56, 20\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Stanley County, Lead-Deadwood, 0, 50\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Lead-Deadwood, Kadoka Area, 56, 14\n2026-10-09, Hill City, Lemmon/McIntosh, 21, 29\n2026-10-09, Harding County/Bison, New Underwood, 32, 24\n2026-10-09, Gregory, Hanson, 6, 45\n2026-10-09, Sioux Falls Lutheran, Bon Homme, 34, 21\n2026-10-09, Howard, Bridgewater-Emery/Ethan, 37, 22\n2026-10-09, Garretson, Estelline/Hendricks, 48, 16\n2026-10-09, Great Plains Lutheran, Britton-Hecla, 6, 35\n2026-10-09, Kimball/White Lake, Parkston, 6, 36\n2026-10-09, Baltic, Sisseton, 47, 20\n2026-10-09, Platte-Geddes, Viborg-Hurley, 55, 28\n2026-10-09, Florence/Henry, Webster Area, 8, 12\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Viborg-Hurley, Sioux Falls Lutheran, 32, 30\n2026-10-09, Timber Lake, Lead-Deadwood, 36, 10\n2026-10-09, Bennett County, Hill City, 54, 10\n2026-10-09, Kadoka Area, New Underwood, 16, 38\n2026-10-09, Wilmot, Great Plains Lutheran, 12, 50\n2026-10-09, Estelline/Hendricks, Baltic, 20, 26\n2026-10-09, Sisseton, Hamlin, 6, 56\n2026-10-09, Waubay/Summit, Britton-Hecla, 22, 40\n2026-10-09, Bon Homme, Kimball/White Lake, 14, 20\n2026-10-09, Hanson, Tripp-Delmont/Armour/Andes Central/Dakota Christian, 40, 0\n2026-10-09, Gregory, Platte-Geddes, 0, 50\n2026-10-09, Parkston, Stanley County, 62, 0\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Hill City, Harding County/Bison, 32, 42\n2026-10-09, Lemmon/McIntosh, Lead-Deadwood, 26, 42\n2026-10-09, New Underwood, Wall, 0, 50\n2026-10-09, Freeman, Bridgewater-Emery/Ethan, 51, 0\n2026-10-09, Tripp-Delmont/Armour/Andes Central/Dakota Christian, Corsica-Stickney, 12, 48\n2026-10-09, Great Plains Lutheran, Florence/Henry, 42, 6\n2026-10-09, Stanley County, Gregory, 24, 8\n2026-10-09, Baltic, Hanson, 14, 22\n2026-10-09, Bon Homme, Parkston, 20, 50\n2026-10-09, Kimball/White Lake, Platte-Geddes, 8, 25\n2026-10-09, Garretson, Viborg-Hurley, 35, 34\n2026-10-09, Waverly-South Shore, Waubay/Summit, 0, 60\n2026-10-09, Hamlin, Webster Area, 54, 0\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Lead-Deadwood, Harding County/Bison, 42, 40\n2026-10-09, Jones County, New Underwood, 6, 34\n2026-10-09, Waubay/Summit, Great Plains Lutheran, 26, 6\n2026-10-09, Avon, Tripp-Delmont/Armour/Andes Central/Dakota Christian, 60, 6\n2026-10-09, Bridgewater-Emery/Ethan, Baltic, 36, 40\n2026-10-09, Sisseton, Castlewood, 16, 48\n2026-10-09, Sioux Falls Lutheran, Estelline/Hendricks, 48, 16\n2026-10-09, Wilmot, Florence/Henry, 28, 34\n2026-10-09, Hamlin, Garretson, 56, 21\n2026-10-09, Corsica-Stickney, Gregory, 60, 20\n2026-10-09, Parkston, Hanson, 50, 0\n2026-10-09, Britton-Hecla, Redfield, 49, 6\n2026-10-09, Viborg-Hurley, Centerville, 6, 52\n2026-10-09, Platte-Geddes, Stanley County, 50, 0\n2026-10-09, Webster Area, Waverly-South Shore, 38, 14\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Timber Lake, Lemmon/McIntosh, 22, 20\n2026-10-09, Wall, Bennett County, 40, 32\n2026-10-09, Freeman, Alcester-Hudson, 36, 17\n2026-10-09, Redfield, Great Plains Lutheran, 0, 42\n2026-10-09, Avon, Scotland/Menno, 50, 0\n2026-10-09, Elkton-Lake Benton, Canistota, 28, 0\n2026-10-09, Burke, Corsica-Stickney, 13, 64\n2026-10-09, Sully Buttes, Faulkton Area, 30, 20\n2026-10-09, North Central, Gettysburg, 20, 22\n2026-10-09, Castlewood, Hamlin, 46, 34\n2026-10-09, De Smet, Howard, 22, 54\n2026-10-09, Waverly-South Shore, Britton-Hecla, 0, 44\n2026-10-09, Philip, Jones County, 47, 12\n2026-10-09, Gregory, Kimball/White Lake, 8, 42\n2026-10-09, New Underwood, Lyman, 6, 41\n2026-10-09, Harding County/Bison, Herreid/Selby Area, 18, 26\n2026-10-09, Sioux Falls Lutheran, Centerville, 14, 58\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Philip, Harding County/Bison, 34, 12\n2026-10-09, Herreid/Selby Area, Lemmon/McIntosh, 22, 19\n2026-10-09, Bennett County, New Underwood, 42, 6\n2026-10-09, Freeman, Chester, 60, 8\n2026-10-09, De Smet, Canistota, 44, 0\n2026-10-09, Howard, Castlewood, 8, 14\n2026-10-09, Centerville, Elkton-Lake Benton, 38, 28\n2026-10-09, Alcester-Hudson, Irene-Wakonda, 42, 0\n2026-10-09, Sully Buttes, Kimball/White Lake, 26, 22\n2026-10-09, Scotland/Menno, Tripp-Delmont/Armour/Andes Central/Dakota Christian, 38, 12\n2026-10-09, Corsica-Stickney, Lyman, 8, 27\n2026-10-09, Ipswich, Redfield, 50, 0\n2026-10-09, North Central, Warner, 6, 17\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Herreid/Selby Area, Timber Lake, 24, 44\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Ipswich, North Central, 26, 12\n2026-10-09, Lemmon/McIntosh, Harding County/Bison, 28, 34\n2026-10-09, Stanley County, Bennett County, 6, 24\n2026-10-09, Gayville-Volin, Alcester-Hudson, 6, 58\n2026-10-09, Lead-Deadwood, Philip, 9, 12\n2026-10-09, Scotland/Menno, Bon Homme, 12, 60\n2026-10-09, Estelline/Hendricks, Castlewood, 8, 58\n2026-10-09, Canistota, Chester, 46, 18\n2026-10-09, Faulkton Area, Warner, 12, 14\n2026-10-09, Freeman, Howard, 52, 13\n2026-10-09, Irene-Wakonda, Centerville, 0, 51\n2026-10-09, Lyman, Sully Buttes, 34, 42\n2026-10-09, Redfield, Waubay/Summit, 0, 50\n2026-10-09, Florence/Henry, Waverly-South Shore, 26, 22\n2026-10-09, Elkton-Lake Benton, De Smet, 26, 28\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Estelline/Hendricks, Elkton-Lake Benton, 12, 38\n2026-10-09, Jones County, Bennett County, 14, 20\n2026-10-09, Lyman, Kadoka Area, 45, 26\n2026-10-09, Hill City, Timber Lake, 7, 50\n2026-10-09, Harding County/Bison, Wall, 12, 44\n2026-10-09, Hanson, Scotland/Menno, 32, 34\n2026-10-09, New Underwood, Philip, 0, 19\n2026-10-09, Alcester-Hudson, Canistota, 41, 0\n2026-10-09, Kimball/White Lake, Corsica-Stickney, 28, 14\n2026-10-09, Lemmon/McIntosh, North Central, 20, 7\n2026-10-09, Avon, Freeman, 34, 56\n2026-10-09, Faulkton Area, Herreid/Selby Area, 20, 18\n2026-10-09, Leola/Frederick Area, Ipswich, 14, 41\n2026-10-09, Webster Area, Redfield, 8, 20\n2026-10-09, Castlewood, Waverly-South Shore, 64, 0\n2026-10-09, Hamlin, De Smet, 56, 20\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Elkton-Lake Benton, St. Mary's, 20, 22\n2026-10-09, Hill City, Lemmon/McIntosh, 21, 29\n2026-10-09, Harding County/Bison, New Underwood, 32, 24\n2026-10-09, Howard, Bridgewater-Emery/Ethan, 37, 22\n2026-10-09, Deubrook Area, Castlewood, 0, 43\n2026-10-09, Centerville, Freeman, 26, 62\n2026-10-09, Northwestern, Faulkton Area, 22, 58\n2026-10-09, Timber Lake, Ipswich, 12, 8\n2026-10-09, Canistota, Irene-Wakonda, 6, 22\n2026-10-09, Corsica-Stickney, Scotland/Menno, 44, 24\n2026-10-09, North Central, Leola/Frederick Area, 40, 0\n2026-10-09, Wall, Lyman, 49, 26\n2026-10-09, Kimball/White Lake, Parkston, 6, 36\n2026-10-09, Redfield, Sully Buttes, 0, 22\n2026-10-09, Waverly-South Shore, Wilmot, 6, 26\n2026-10-09, De Smet, Wolsey-Wessington, 32, 6\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Timber Lake, Lead-Deadwood, 36, 10\n2026-10-09, Bennett County, Hill City, 54, 10\n2026-10-09, Philip, Wall, 0, 50\n2026-10-09, Centerville, Alcester-Hudson, 34, 8\n2026-10-09, Canistota, Freeman, 0, 1\n2026-10-09, Ipswich, Faulkton Area, 8, 30\n2026-10-09, Sully Buttes, Gettysburg, 22, 12\n2026-10-09, Elkton-Lake Benton, Howard, 0, 37\n2026-10-09, Lyman, Jones County, 29, 8\n2026-10-09, Bon Homme, Kimball/White Lake, 14, 20\n2026-10-09, Corsica-Stickney, Avon, 16, 30\n2026-10-09, Redfield, Waverly-South Shore, 44, 0\n2026-10-09, Scotland/Menno, De Smet, 22, 24\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Castlewood, Elkton-Lake Benton, 35, 12\n2026-10-09, Hill City, Harding County/Bison, 32, 42\n2026-10-09, Lemmon/McIntosh, Lead-Deadwood, 26, 42\n2026-10-09, Lyman, Philip, 18, 19\n2026-10-09, North Central, Timber Lake, 6, 12\n2026-10-09, Bennett County, Kadoka Area, 42, 22\n2026-10-09, Howard, Alcester-Hudson, 40, 12\n2026-10-09, Freeman, Bridgewater-Emery/Ethan, 51, 0\n2026-10-09, Tripp-Delmont/Armour/Andes Central/Dakota Christian, Corsica-Stickney, 12, 48\n2026-10-09, Ipswich, Northwestern, 44, 8\n2026-10-09, Kimball/White Lake, Platte-Geddes, 8, 25\n2026-10-09, Gayville-Volin, Centerville, 6, 56\n2026-10-09, Herreid/Selby Area, Sully Buttes, 14, 34\n2026-10-09, Scotland/Menno, Burke, 46, 22\n2026-10-09, Faulkton Area, Hitchcock-Tulare, 30, 34\n2026-10-09, Waverly-South Shore, Waubay/Summit, 0, 60\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Lead-Deadwood, Harding County/Bison, 42, 40\n2026-10-09, Philip, Bennett County, 16, 30\n2026-10-09, Howard, Canistota, 50, 0\n2026-10-09, Sisseton, Castlewood, 16, 48\n2026-10-09, Alcester-Hudson, Elkton-Lake Benton, 13, 46\n2026-10-09, Faulkton Area, North Central, 20, 7\n2026-10-09, De Smet, Freeman, 0, 50\n2026-10-09, Corsica-Stickney, Gregory, 60, 20\n2026-10-09, Lemmon/McIntosh, Ipswich, 36, 16\n2026-10-09, Burke, Kimball/White Lake, 2, 60\n2026-10-09, Britton-Hecla, Redfield, 49, 6\n2026-10-09, Viborg-Hurley, Centerville, 6, 52\n2026-10-09, Timber Lake, Sully Buttes, 50, 6\n2026-10-09, Webster Area, Waverly-South Shore, 38, 14\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Bennett County, Lyman, ,\n2026-10-09, Sully Buttes, Lemmon/McIntosh, ,\n2026-10-09, Harding County/Bison, Timber Lake, ,\n2026-10-09, Kadoka Area, Philip, ,\n2026-10-09, Irene-Wakonda, Scotland/Menno, ,\n2026-10-09, Northwestern, North Central, ,\n2026-10-09, Leola/Frederick Area, Faulkton Area, ,\n2026-10-09, Chester, Howard, ,\n2026-10-09, Warner, Ipswich, ,\n2026-10-09, Centerville, Avon, ,\n2026-10-09, Florence/Henry, Redfield, ,\n2026-10-09, Kimball/White Lake, Stanley County, ,\n2026-10-09, Castlewood, De Smet, ,\n2026-10-09, Waverly-South Shore, Great Plains Lutheran, ,\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Garretson, Sioux Falls Lutheran, ,\n2026-10-09, Lead-Deadwood, Hill City, ,\n2026-10-09, Viborg-Hurley, Baltic, ,\n2026-10-09, Platte-Geddes, Bon Homme, ,\n2026-10-09, Hanson, Bridgewater-Emery/Ethan, ,\n2026-10-09, Estelline/Hendricks, Hamlin, ,\n2026-10-09, Gregory, Parkston, ,\n2026-10-09, Florence/Henry, Redfield, ,\n2026-10-09, Britton-Hecla, Sisseton, ,\n2026-10-09, Kimball/White Lake, Stanley County, ,\n2026-10-09, Webster Area, Waubay/Summit, ,\n2026-10-09, Waverly-South Shore, Great Plains Lutheran, ,\n\n# Imported scoreboard (10/12/2026)\n2026-10-09, Garretson, Sioux Falls Lutheran, ,\n2026-10-09, Lead-Deadwood, Hill City, ,\n2026-10-09, Viborg-Hurley, Baltic, ,\n2026-10-09, Platte-Geddes, Bon Homme, ,\n2026-10-09, Hanson, Bridgewater-Emery/Ethan, ,\n2026-10-09, Estelline/Hendricks, Hamlin, ,\n2026-10-09, Gregory, Parkston, ,\n2026-10-09, Florence/Henry, Redfield, ,\n2026-10-09, Britton-Hecla, Sisseton, ,\n2026-10-09, Kimball/White Lake, Stanley County, ,\n2026-10-09, Webster Area, Waubay/Summit, ,\n2026-10-09, Waverly-South Shore, Great Plains Lutheran, ,\n2026-10-09, Bennett County, Lyman, ,\n2026-10-09, Sully Buttes, Lemmon/McIntosh, ,\n2026-10-09, Harding County/Bison, Timber Lake, ,\n2026-10-09, Kadoka Area, Philip, ,\n2026-10-09, Irene-Wakonda, Scotland/Menno, ,\n2026-10-09, Northwestern, North Central, ,\n2026-10-09, Leola/Frederick Area, Faulkton Area, ,\n2026-10-09, Chester, Howard, ,\n2026-10-09, Warner, Ipswich, ,\n2026-10-09, Centerville, Avon, ,\n2026-10-09, Florence/Henry, Redfield, ,\n2026-10-09, Kimball/White Lake, Stanley County, ,\n2026-10-09, Castlewood, De Smet, ,\n2026-10-09, Waverly-South Shore, Great Plains Lutheran, ,\n",
+  "picks": {
+    "2026-10-09|garretson|sioux falls lutheran": "sioux falls lutheran",
+    "2026-10-09|bon homme|platte-geddes": "platte-geddes",
+    "2026-10-09|bridgewater-emery/ethan|hanson": "hanson"
+  },
+  "standings": [
+    {
+      "team": "Brandon Valley",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Harrisburg",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "O'Gorman",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Rapid City Central",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Rapid City Stevens",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Falls Jefferson",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Falls Lincoln",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Falls Roosevelt",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Falls Washington",
+      "class": "11AAA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Aberdeen Central",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Brookings",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Douglas",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Huron",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Mitchell",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Pierre T.F. Riggs",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Spearfish",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sturgis Brown",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Tea Area",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Watertown",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Yankton",
+      "class": "11AA",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Belle Fourche",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Canton",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Custer",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Dakota Valley",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Dell Rapids",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Lennox",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Madison",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Milbank",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Falls Christian",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Tri-Valley",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Vermillion",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "West Central",
+      "class": "11A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Aberdeen Roncalli",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Beresford",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Chamberlain",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Clark/Willow Lake",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Deuel",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Elk Point-Jefferson",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Flandreau",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Groton Area",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Hot Springs",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "McCook Central/Montrose",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Miller/Highmore-Harrold",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Mobridge-Pollock",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Mount Vernon/Plankinton",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Parker/Marion",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Rapid City Christian",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Valley",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "St. Thomas More",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Wagner",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Winner",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Woonsocket/Wessington Springs/Sanborn Central",
+      "class": "11B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Parkston",
+      "class": "9AA",
+      "now": {
+        "record": "7-0",
+        "seedAvg": 46.5
+      },
+      "projected": {
+        "record": "8-0",
+        "seedAvg": 46.688
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Hamlin",
+      "class": "9AA",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 45.214
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 45.25
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Platte-Geddes",
+      "class": "9AA",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 43.929
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 44.875
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Britton-Hecla",
+      "class": "9AA",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 44.143
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 44.688
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Waubay/Summit",
+      "class": "9AA",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 43.071
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 43.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Great Plains Lutheran",
+      "class": "9AA",
+      "now": {
+        "record": "5-2",
+        "seedAvg": 41.929
+      },
+      "projected": {
+        "record": "6-2",
+        "seedAvg": 42.375
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Viborg-Hurley",
+      "class": "9AA",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 41.214
+      },
+      "projected": {
+        "record": "5-3",
+        "seedAvg": 42.313
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Garretson",
+      "class": "9AA",
+      "now": {
+        "record": "5-2",
+        "seedAvg": 42.357
+      },
+      "projected": {
+        "record": "5-3",
+        "seedAvg": 41.938
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Lead-Deadwood",
+      "class": "9AA",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 41.429
+      },
+      "projected": {
+        "record": "5-3",
+        "seedAvg": 41.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Bon Homme",
+      "class": "9AA",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 41
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 41.313
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sioux Falls Lutheran",
+      "class": "9AA",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 39.429
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 41.125
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Hanson",
+      "class": "9AA",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 39
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 39.813
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Baltic",
+      "class": "9AA",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 38.357
+      },
+      "projected": {
+        "record": "3-5",
+        "seedAvg": 38.625
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Stanley County",
+      "class": "9AA",
+      "now": {
+        "record": "2-5",
+        "seedAvg": 38.286
+      },
+      "projected": {
+        "record": "2-6",
+        "seedAvg": 38.563
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Webster Area",
+      "class": "9AA",
+      "now": {
+        "record": "2-5",
+        "seedAvg": 36.786
+      },
+      "projected": {
+        "record": "2-6",
+        "seedAvg": 37.813
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sisseton",
+      "class": "9AA",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 36.929
+      },
+      "projected": {
+        "record": "1-7",
+        "seedAvg": 37.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Bridgewater-Emery/Ethan",
+      "class": "9AA",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 37.571
+      },
+      "projected": {
+        "record": "1-7",
+        "seedAvg": 37.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Estelline/Hendricks",
+      "class": "9AA",
+      "now": {
+        "record": "2-5",
+        "seedAvg": 37.214
+      },
+      "projected": {
+        "record": "2-6",
+        "seedAvg": 37.625
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Florence/Henry",
+      "class": "9AA",
+      "now": {
+        "record": "2-5",
+        "seedAvg": 37
+      },
+      "projected": {
+        "record": "2-6",
+        "seedAvg": 37.063
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "New Underwood",
+      "class": "9AA",
+      "now": {
+        "record": "2-6",
+        "seedAvg": 36.5
+      },
+      "projected": {
+        "record": "2-6",
+        "seedAvg": 36.875
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Hill City",
+      "class": "9AA",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 36.714
+      },
+      "projected": {
+        "record": "1-7",
+        "seedAvg": 36.813
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Gregory",
+      "class": "9AA",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 35.429
+      },
+      "projected": {
+        "record": "1-7",
+        "seedAvg": 36.438
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "class": "9AA",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 35.214
+      },
+      "projected": {
+        "record": "1-6",
+        "seedAvg": 35.429
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Timber Lake",
+      "class": "9A",
+      "now": {
+        "record": "7-0",
+        "seedAvg": 46.714
+      },
+      "projected": {
+        "record": "8-0",
+        "seedAvg": 47.25
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Freeman",
+      "class": "9A",
+      "now": {
+        "record": "8-0",
+        "seedAvg": 46.875
+      },
+      "projected": {
+        "record": "8-0",
+        "seedAvg": 46.875
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Castlewood",
+      "class": "9A",
+      "now": {
+        "record": "7-0",
+        "seedAvg": 45.643
+      },
+      "projected": {
+        "record": "8-0",
+        "seedAvg": 46.313
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sully Buttes",
+      "class": "9A",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 45.214
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 45.813
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Centerville",
+      "class": "9A",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 43.929
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 44.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Bennett County",
+      "class": "9A",
+      "now": {
+        "record": "6-1",
+        "seedAvg": 42.857
+      },
+      "projected": {
+        "record": "7-1",
+        "seedAvg": 43.563
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Philip",
+      "class": "9A",
+      "now": {
+        "record": "5-2",
+        "seedAvg": 43
+      },
+      "projected": {
+        "record": "6-2",
+        "seedAvg": 43.125
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Howard",
+      "class": "9A",
+      "now": {
+        "record": "5-2",
+        "seedAvg": 43
+      },
+      "projected": {
+        "record": "6-2",
+        "seedAvg": 42.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Kimball/White Lake",
+      "class": "9A",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 41.643
+      },
+      "projected": {
+        "record": "5-3",
+        "seedAvg": 42.313
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Faulkton Area",
+      "class": "9A",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 41.643
+      },
+      "projected": {
+        "record": "5-3",
+        "seedAvg": 41.938
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "De Smet",
+      "class": "9A",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 41
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 41.313
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Lyman",
+      "class": "9A",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 40.786
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 40.938
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Elkton-Lake Benton",
+      "class": "9A",
+      "now": {
+        "record": "3-5",
+        "seedAvg": 39.75
+      },
+      "projected": {
+        "record": "3-5",
+        "seedAvg": 40.125
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Ipswich",
+      "class": "9A",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 39.286
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 39.813
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Redfield",
+      "class": "9A",
+      "now": {
+        "record": "2-5",
+        "seedAvg": 38.286
+      },
+      "projected": {
+        "record": "3-5",
+        "seedAvg": 39.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Corsica-Stickney",
+      "class": "9A",
+      "now": {
+        "record": "4-3",
+        "seedAvg": 39.714
+      },
+      "projected": {
+        "record": "4-3",
+        "seedAvg": 39.714
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Harding County/Bison",
+      "class": "9A",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 39.214
+      },
+      "projected": {
+        "record": "3-5",
+        "seedAvg": 39.563
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Alcester-Hudson",
+      "class": "9A",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 39
+      },
+      "projected": {
+        "record": "3-4",
+        "seedAvg": 39.214
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Lemmon/McIntosh",
+      "class": "9A",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 38.786
+      },
+      "projected": {
+        "record": "3-5",
+        "seedAvg": 39.188
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Scotland/Menno",
+      "class": "9A",
+      "now": {
+        "record": "3-4",
+        "seedAvg": 38.571
+      },
+      "projected": {
+        "record": "4-4",
+        "seedAvg": 38.875
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "North Central",
+      "class": "9A",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 36.5
+      },
+      "projected": {
+        "record": "2-6",
+        "seedAvg": 37.25
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Canistota",
+      "class": "9A",
+      "now": {
+        "record": "1-6",
+        "seedAvg": 35.429
+      },
+      "projected": {
+        "record": "1-6",
+        "seedAvg": 35.429
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Waverly-South Shore",
+      "class": "9A",
+      "now": {
+        "record": "0-7",
+        "seedAvg": 34.286
+      },
+      "projected": {
+        "record": "0-8",
+        "seedAvg": 35.25
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Hitchcock-Tulare",
+      "class": "9B",
+      "now": {
+        "record": "1-0",
+        "seedAvg": 48
+      },
+      "projected": {
+        "record": "1-0",
+        "seedAvg": 49.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Wall",
+      "class": "9B",
+      "now": {
+        "record": "6-0",
+        "seedAvg": 48
+      },
+      "projected": {
+        "record": "6-0",
+        "seedAvg": 48.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Warner",
+      "class": "9B",
+      "now": {
+        "record": "2-0",
+        "seedAvg": 45.75
+      },
+      "projected": {
+        "record": "3-0",
+        "seedAvg": 47.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "St. Mary's",
+      "class": "9B",
+      "now": {
+        "record": "1-0",
+        "seedAvg": 46.5
+      },
+      "projected": {
+        "record": "1-0",
+        "seedAvg": 46.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Avon",
+      "class": "9B",
+      "now": {
+        "record": "3-1",
+        "seedAvg": 43.5
+      },
+      "projected": {
+        "record": "3-2",
+        "seedAvg": 42.9
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Gettysburg",
+      "class": "9B",
+      "now": {
+        "record": "1-1",
+        "seedAvg": 40
+      },
+      "projected": {
+        "record": "1-1",
+        "seedAvg": 41.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Herreid/Selby Area",
+      "class": "9B",
+      "now": {
+        "record": "2-3",
+        "seedAvg": 40.4
+      },
+      "projected": {
+        "record": "2-3",
+        "seedAvg": 41
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Deubrook Area",
+      "class": "9B",
+      "now": {
+        "record": "0-1",
+        "seedAvg": 39
+      },
+      "projected": {
+        "record": "0-1",
+        "seedAvg": 39
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Wilmot",
+      "class": "9B",
+      "now": {
+        "record": "1-3",
+        "seedAvg": 36.5
+      },
+      "projected": {
+        "record": "1-3",
+        "seedAvg": 37.25
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Irene-Wakonda",
+      "class": "9B",
+      "now": {
+        "record": "1-3",
+        "seedAvg": 36.875
+      },
+      "projected": {
+        "record": "1-4",
+        "seedAvg": 37
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Gayville-Volin",
+      "class": "9B",
+      "now": {
+        "record": "0-2",
+        "seedAvg": 35.25
+      },
+      "projected": {
+        "record": "0-2",
+        "seedAvg": 36
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Kadoka Area",
+      "class": "9B",
+      "now": {
+        "record": "0-4",
+        "seedAvg": 34.5
+      },
+      "projected": {
+        "record": "0-5",
+        "seedAvg": 35.7
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Jones County",
+      "class": "9B",
+      "now": {
+        "record": "0-4",
+        "seedAvg": 34.875
+      },
+      "projected": {
+        "record": "0-4",
+        "seedAvg": 35.625
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Chester",
+      "class": "9B",
+      "now": {
+        "record": "0-2",
+        "seedAvg": 34.5
+      },
+      "projected": {
+        "record": "0-3",
+        "seedAvg": 35.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Wolsey-Wessington",
+      "class": "9B",
+      "now": {
+        "record": "0-1",
+        "seedAvg": 34.5
+      },
+      "projected": {
+        "record": "0-1",
+        "seedAvg": 34.5
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Leola/Frederick Area",
+      "class": "9B",
+      "now": {
+        "record": "0-2",
+        "seedAvg": 32.25
+      },
+      "projected": {
+        "record": "0-3",
+        "seedAvg": 34
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Northwestern",
+      "class": "9B",
+      "now": {
+        "record": "0-2",
+        "seedAvg": 34.5
+      },
+      "projected": {
+        "record": "0-3",
+        "seedAvg": 34
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Burke",
+      "class": "9B",
+      "now": {
+        "record": "0-4",
+        "seedAvg": 33
+      },
+      "projected": {
+        "record": "0-4",
+        "seedAvg": 33.75
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Arlington",
+      "class": "9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Colman-Egan",
+      "class": "9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Iroquois/Lake Preston",
+      "class": "9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Oldham-Ramona-Rutland",
+      "class": "9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Sunshine Bible Academy",
+      "class": "9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Cheyenne-Eagle Butte/Tiospaye Topa",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Lakota Tech",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Little Wound",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Mahpíya Lúta",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Pine Ridge",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "St. Francis Indian",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Todd County",
+      "class": "All-Nations 9A",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Crazy Horse",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Crow Creek",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Dupree/Takini",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Flandreau Indian",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Lower Brule",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Marty",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "McLaughlin",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "Tiospa Zina",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    },
+    {
+      "team": "White River",
+      "class": "All-Nations 9B",
+      "now": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "projected": {
+        "record": "0-0",
+        "seedAvg": null
+      },
+      "goBoundAvg": null,
+      "estimated": false
+    }
+  ],
+  "games": [
+    {
+      "date": "2026-10-09",
+      "away": "Stanley County",
+      "home": "Bon Homme",
+      "awayScore": 0,
+      "homeScore": 48,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Parkston",
+      "home": "Hill City",
+      "awayScore": 54,
+      "homeScore": 24,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Redfield",
+      "home": "Great Plains Lutheran",
+      "awayScore": 0,
+      "homeScore": 42,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Florence/Henry",
+      "home": "Estelline/Hendricks",
+      "awayScore": 8,
+      "homeScore": 48,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Baltic",
+      "home": "Garretson",
+      "awayScore": 6,
+      "homeScore": 35,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Castlewood",
+      "home": "Hamlin",
+      "awayScore": 46,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waverly-South Shore",
+      "home": "Britton-Hecla",
+      "awayScore": 0,
+      "homeScore": 44,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Gregory",
+      "home": "Kimball/White Lake",
+      "awayScore": 8,
+      "homeScore": 42,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "New Underwood",
+      "home": "Lyman",
+      "awayScore": 6,
+      "homeScore": 41,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "home": "Platte-Geddes",
+      "awayScore": 8,
+      "homeScore": 43,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Webster Area",
+      "home": "Sisseton",
+      "awayScore": 12,
+      "homeScore": 39,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sioux Falls Lutheran",
+      "home": "Centerville",
+      "awayScore": 14,
+      "homeScore": 58,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bridgewater-Emery/Ethan",
+      "home": "Viborg-Hurley",
+      "awayScore": 8,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waubay/Summit",
+      "home": "Wilmot",
+      "awayScore": 46,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Wall",
+      "home": "Lead-Deadwood",
+      "awayScore": 36,
+      "homeScore": 7,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bennett County",
+      "home": "New Underwood",
+      "awayScore": 42,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sioux Falls Lutheran",
+      "home": "Baltic",
+      "awayScore": 22,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Garretson",
+      "home": "Bridgewater-Emery/Ethan",
+      "awayScore": 36,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sisseton",
+      "home": "Estelline/Hendricks",
+      "awayScore": 0,
+      "homeScore": 44,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bon Homme",
+      "home": "Gregory",
+      "awayScore": 55,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Viborg-Hurley",
+      "home": "Hanson",
+      "awayScore": 32,
+      "homeScore": 30,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waubay/Summit",
+      "home": "Florence/Henry",
+      "awayScore": 42,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hamlin",
+      "home": "Britton-Hecla",
+      "awayScore": 34,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Scotland/Menno",
+      "home": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "awayScore": 38,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Parkston",
+      "home": "Platte-Geddes",
+      "awayScore": 30,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hill City",
+      "home": "Stanley County",
+      "awayScore": 20,
+      "homeScore": 28,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Great Plains Lutheran",
+      "home": "Webster Area",
+      "awayScore": 34,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Platte-Geddes",
+      "home": "Sioux Falls Lutheran",
+      "awayScore": 50,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Stanley County",
+      "home": "Bennett County",
+      "awayScore": 6,
+      "homeScore": 24,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "New Underwood",
+      "home": "Hill City",
+      "awayScore": 26,
+      "homeScore": 42,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lead-Deadwood",
+      "home": "Philip",
+      "awayScore": 9,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Scotland/Menno",
+      "home": "Bon Homme",
+      "awayScore": 12,
+      "homeScore": 60,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Estelline/Hendricks",
+      "home": "Castlewood",
+      "awayScore": 8,
+      "homeScore": 58,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hanson",
+      "home": "Garretson",
+      "awayScore": 30,
+      "homeScore": 37,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Baltic",
+      "home": "Hamlin",
+      "awayScore": 6,
+      "homeScore": 43,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bridgewater-Emery/Ethan",
+      "home": "Parkston",
+      "awayScore": 12,
+      "homeScore": 56,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Great Plains Lutheran",
+      "home": "Sisseton",
+      "awayScore": 36,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "home": "Burke",
+      "awayScore": 44,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Redfield",
+      "home": "Waubay/Summit",
+      "awayScore": 0,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Florence/Henry",
+      "home": "Waverly-South Shore",
+      "awayScore": 26,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Britton-Hecla",
+      "home": "Webster Area",
+      "awayScore": 59,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Estelline/Hendricks",
+      "home": "Elkton-Lake Benton",
+      "awayScore": 12,
+      "homeScore": 38,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bridgewater-Emery/Ethan",
+      "home": "Sioux Falls Lutheran",
+      "awayScore": 22,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hill City",
+      "home": "Timber Lake",
+      "awayScore": 7,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hanson",
+      "home": "Scotland/Menno",
+      "awayScore": 32,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "New Underwood",
+      "home": "Philip",
+      "awayScore": 0,
+      "homeScore": 19,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Britton-Hecla",
+      "home": "Florence/Henry",
+      "awayScore": 63,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bon Homme",
+      "home": "Garretson",
+      "awayScore": 40,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "home": "Gregory",
+      "awayScore": 6,
+      "homeScore": 40,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Webster Area",
+      "home": "Redfield",
+      "awayScore": 8,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Irene-Wakonda",
+      "home": "Viborg-Hurley",
+      "awayScore": 0,
+      "homeScore": 52,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sisseton",
+      "home": "Waubay/Summit",
+      "awayScore": 0,
+      "homeScore": 52,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hamlin",
+      "home": "De Smet",
+      "awayScore": 56,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Stanley County",
+      "home": "Lead-Deadwood",
+      "awayScore": 0,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lead-Deadwood",
+      "home": "Kadoka Area",
+      "awayScore": 56,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hill City",
+      "home": "Lemmon/McIntosh",
+      "awayScore": 21,
+      "homeScore": 29,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Harding County/Bison",
+      "home": "New Underwood",
+      "awayScore": 32,
+      "homeScore": 24,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Gregory",
+      "home": "Hanson",
+      "awayScore": 6,
+      "homeScore": 45,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sioux Falls Lutheran",
+      "home": "Bon Homme",
+      "awayScore": 34,
+      "homeScore": 21,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Howard",
+      "home": "Bridgewater-Emery/Ethan",
+      "awayScore": 37,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Garretson",
+      "home": "Estelline/Hendricks",
+      "awayScore": 48,
+      "homeScore": 16,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Great Plains Lutheran",
+      "home": "Britton-Hecla",
+      "awayScore": 6,
+      "homeScore": 35,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Kimball/White Lake",
+      "home": "Parkston",
+      "awayScore": 6,
+      "homeScore": 36,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Baltic",
+      "home": "Sisseton",
+      "awayScore": 47,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Platte-Geddes",
+      "home": "Viborg-Hurley",
+      "awayScore": 55,
+      "homeScore": 28,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Florence/Henry",
+      "home": "Webster Area",
+      "awayScore": 8,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Viborg-Hurley",
+      "home": "Sioux Falls Lutheran",
+      "awayScore": 32,
+      "homeScore": 30,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Timber Lake",
+      "home": "Lead-Deadwood",
+      "awayScore": 36,
+      "homeScore": 10,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bennett County",
+      "home": "Hill City",
+      "awayScore": 54,
+      "homeScore": 10,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Kadoka Area",
+      "home": "New Underwood",
+      "awayScore": 16,
+      "homeScore": 38,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Wilmot",
+      "home": "Great Plains Lutheran",
+      "awayScore": 12,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Estelline/Hendricks",
+      "home": "Baltic",
+      "awayScore": 20,
+      "homeScore": 26,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sisseton",
+      "home": "Hamlin",
+      "awayScore": 6,
+      "homeScore": 56,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waubay/Summit",
+      "home": "Britton-Hecla",
+      "awayScore": 22,
+      "homeScore": 40,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bon Homme",
+      "home": "Kimball/White Lake",
+      "awayScore": 14,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hanson",
+      "home": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "awayScore": 40,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Gregory",
+      "home": "Platte-Geddes",
+      "awayScore": 0,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Parkston",
+      "home": "Stanley County",
+      "awayScore": 62,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hill City",
+      "home": "Harding County/Bison",
+      "awayScore": 32,
+      "homeScore": 42,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lemmon/McIntosh",
+      "home": "Lead-Deadwood",
+      "awayScore": 26,
+      "homeScore": 42,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "New Underwood",
+      "home": "Wall",
+      "awayScore": 0,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Freeman",
+      "home": "Bridgewater-Emery/Ethan",
+      "awayScore": 51,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "home": "Corsica-Stickney",
+      "awayScore": 12,
+      "homeScore": 48,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Great Plains Lutheran",
+      "home": "Florence/Henry",
+      "awayScore": 42,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Stanley County",
+      "home": "Gregory",
+      "awayScore": 24,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Baltic",
+      "home": "Hanson",
+      "awayScore": 14,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bon Homme",
+      "home": "Parkston",
+      "awayScore": 20,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Kimball/White Lake",
+      "home": "Platte-Geddes",
+      "awayScore": 8,
+      "homeScore": 25,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Garretson",
+      "home": "Viborg-Hurley",
+      "awayScore": 35,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waverly-South Shore",
+      "home": "Waubay/Summit",
+      "awayScore": 0,
+      "homeScore": 60,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hamlin",
+      "home": "Webster Area",
+      "awayScore": 54,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lead-Deadwood",
+      "home": "Harding County/Bison",
+      "awayScore": 42,
+      "homeScore": 40,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Jones County",
+      "home": "New Underwood",
+      "awayScore": 6,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waubay/Summit",
+      "home": "Great Plains Lutheran",
+      "awayScore": 26,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Avon",
+      "home": "Tripp-Delmont/Armour/Andes Central/Dakota Christian",
+      "awayScore": 60,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bridgewater-Emery/Ethan",
+      "home": "Baltic",
+      "awayScore": 36,
+      "homeScore": 40,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sisseton",
+      "home": "Castlewood",
+      "awayScore": 16,
+      "homeScore": 48,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sioux Falls Lutheran",
+      "home": "Estelline/Hendricks",
+      "awayScore": 48,
+      "homeScore": 16,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Wilmot",
+      "home": "Florence/Henry",
+      "awayScore": 28,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hamlin",
+      "home": "Garretson",
+      "awayScore": 56,
+      "homeScore": 21,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Corsica-Stickney",
+      "home": "Gregory",
+      "awayScore": 60,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Parkston",
+      "home": "Hanson",
+      "awayScore": 50,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Britton-Hecla",
+      "home": "Redfield",
+      "awayScore": 49,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Viborg-Hurley",
+      "home": "Centerville",
+      "awayScore": 6,
+      "homeScore": 52,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Platte-Geddes",
+      "home": "Stanley County",
+      "awayScore": 50,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Webster Area",
+      "home": "Waverly-South Shore",
+      "awayScore": 38,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Timber Lake",
+      "home": "Lemmon/McIntosh",
+      "awayScore": 22,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Wall",
+      "home": "Bennett County",
+      "awayScore": 40,
+      "homeScore": 32,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Freeman",
+      "home": "Alcester-Hudson",
+      "awayScore": 36,
+      "homeScore": 17,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Avon",
+      "home": "Scotland/Menno",
+      "awayScore": 50,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Elkton-Lake Benton",
+      "home": "Canistota",
+      "awayScore": 28,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Burke",
+      "home": "Corsica-Stickney",
+      "awayScore": 13,
+      "homeScore": 64,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sully Buttes",
+      "home": "Faulkton Area",
+      "awayScore": 30,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "North Central",
+      "home": "Gettysburg",
+      "awayScore": 20,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "De Smet",
+      "home": "Howard",
+      "awayScore": 22,
+      "homeScore": 54,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Philip",
+      "home": "Jones County",
+      "awayScore": 47,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Harding County/Bison",
+      "home": "Herreid/Selby Area",
+      "awayScore": 18,
+      "homeScore": 26,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Philip",
+      "home": "Harding County/Bison",
+      "awayScore": 34,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Herreid/Selby Area",
+      "home": "Lemmon/McIntosh",
+      "awayScore": 22,
+      "homeScore": 19,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Freeman",
+      "home": "Chester",
+      "awayScore": 60,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "De Smet",
+      "home": "Canistota",
+      "awayScore": 44,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Howard",
+      "home": "Castlewood",
+      "awayScore": 8,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Centerville",
+      "home": "Elkton-Lake Benton",
+      "awayScore": 38,
+      "homeScore": 28,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Alcester-Hudson",
+      "home": "Irene-Wakonda",
+      "awayScore": 42,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sully Buttes",
+      "home": "Kimball/White Lake",
+      "awayScore": 26,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Corsica-Stickney",
+      "home": "Lyman",
+      "awayScore": 8,
+      "homeScore": 27,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Ipswich",
+      "home": "Redfield",
+      "awayScore": 50,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "North Central",
+      "home": "Warner",
+      "awayScore": 6,
+      "homeScore": 17,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Herreid/Selby Area",
+      "home": "Timber Lake",
+      "awayScore": 24,
+      "homeScore": 44,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Ipswich",
+      "home": "North Central",
+      "awayScore": 26,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lemmon/McIntosh",
+      "home": "Harding County/Bison",
+      "awayScore": 28,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Gayville-Volin",
+      "home": "Alcester-Hudson",
+      "awayScore": 6,
+      "homeScore": 58,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Canistota",
+      "home": "Chester",
+      "awayScore": 46,
+      "homeScore": 18,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Faulkton Area",
+      "home": "Warner",
+      "awayScore": 12,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Freeman",
+      "home": "Howard",
+      "awayScore": 52,
+      "homeScore": 13,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Irene-Wakonda",
+      "home": "Centerville",
+      "awayScore": 0,
+      "homeScore": 51,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lyman",
+      "home": "Sully Buttes",
+      "awayScore": 34,
+      "homeScore": 42,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Elkton-Lake Benton",
+      "home": "De Smet",
+      "awayScore": 26,
+      "homeScore": 28,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Jones County",
+      "home": "Bennett County",
+      "awayScore": 14,
+      "homeScore": 20,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lyman",
+      "home": "Kadoka Area",
+      "awayScore": 45,
+      "homeScore": 26,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Harding County/Bison",
+      "home": "Wall",
+      "awayScore": 12,
+      "homeScore": 44,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Alcester-Hudson",
+      "home": "Canistota",
+      "awayScore": 41,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Kimball/White Lake",
+      "home": "Corsica-Stickney",
+      "awayScore": 28,
+      "homeScore": 14,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lemmon/McIntosh",
+      "home": "North Central",
+      "awayScore": 20,
+      "homeScore": 7,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Avon",
+      "home": "Freeman",
+      "awayScore": 34,
+      "homeScore": 56,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Faulkton Area",
+      "home": "Herreid/Selby Area",
+      "awayScore": 20,
+      "homeScore": 18,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Leola/Frederick Area",
+      "home": "Ipswich",
+      "awayScore": 14,
+      "homeScore": 41,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Castlewood",
+      "home": "Waverly-South Shore",
+      "awayScore": 64,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Elkton-Lake Benton",
+      "home": "St. Mary's",
+      "awayScore": 20,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Deubrook Area",
+      "home": "Castlewood",
+      "awayScore": 0,
+      "homeScore": 43,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Centerville",
+      "home": "Freeman",
+      "awayScore": 26,
+      "homeScore": 62,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Northwestern",
+      "home": "Faulkton Area",
+      "awayScore": 22,
+      "homeScore": 58,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Timber Lake",
+      "home": "Ipswich",
+      "awayScore": 12,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Canistota",
+      "home": "Irene-Wakonda",
+      "awayScore": 6,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Corsica-Stickney",
+      "home": "Scotland/Menno",
+      "awayScore": 44,
+      "homeScore": 24,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "North Central",
+      "home": "Leola/Frederick Area",
+      "awayScore": 40,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Wall",
+      "home": "Lyman",
+      "awayScore": 49,
+      "homeScore": 26,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Redfield",
+      "home": "Sully Buttes",
+      "awayScore": 0,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waverly-South Shore",
+      "home": "Wilmot",
+      "awayScore": 6,
+      "homeScore": 26,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "De Smet",
+      "home": "Wolsey-Wessington",
+      "awayScore": 32,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Philip",
+      "home": "Wall",
+      "awayScore": 0,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Centerville",
+      "home": "Alcester-Hudson",
+      "awayScore": 34,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Canistota",
+      "home": "Freeman",
+      "awayScore": 0,
+      "homeScore": 1,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Ipswich",
+      "home": "Faulkton Area",
+      "awayScore": 8,
+      "homeScore": 30,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sully Buttes",
+      "home": "Gettysburg",
+      "awayScore": 22,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Elkton-Lake Benton",
+      "home": "Howard",
+      "awayScore": 0,
+      "homeScore": 37,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lyman",
+      "home": "Jones County",
+      "awayScore": 29,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Corsica-Stickney",
+      "home": "Avon",
+      "awayScore": 16,
+      "homeScore": 30,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Redfield",
+      "home": "Waverly-South Shore",
+      "awayScore": 44,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Scotland/Menno",
+      "home": "De Smet",
+      "awayScore": 22,
+      "homeScore": 24,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Castlewood",
+      "home": "Elkton-Lake Benton",
+      "awayScore": 35,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lyman",
+      "home": "Philip",
+      "awayScore": 18,
+      "homeScore": 19,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "North Central",
+      "home": "Timber Lake",
+      "awayScore": 6,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bennett County",
+      "home": "Kadoka Area",
+      "awayScore": 42,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Howard",
+      "home": "Alcester-Hudson",
+      "awayScore": 40,
+      "homeScore": 12,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Ipswich",
+      "home": "Northwestern",
+      "awayScore": 44,
+      "homeScore": 8,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Gayville-Volin",
+      "home": "Centerville",
+      "awayScore": 6,
+      "homeScore": 56,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Herreid/Selby Area",
+      "home": "Sully Buttes",
+      "awayScore": 14,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Scotland/Menno",
+      "home": "Burke",
+      "awayScore": 46,
+      "homeScore": 22,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Faulkton Area",
+      "home": "Hitchcock-Tulare",
+      "awayScore": 30,
+      "homeScore": 34,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Philip",
+      "home": "Bennett County",
+      "awayScore": 16,
+      "homeScore": 30,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Howard",
+      "home": "Canistota",
+      "awayScore": 50,
+      "homeScore": 0,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Alcester-Hudson",
+      "home": "Elkton-Lake Benton",
+      "awayScore": 13,
+      "homeScore": 46,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Faulkton Area",
+      "home": "North Central",
+      "awayScore": 20,
+      "homeScore": 7,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "De Smet",
+      "home": "Freeman",
+      "awayScore": 0,
+      "homeScore": 50,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lemmon/McIntosh",
+      "home": "Ipswich",
+      "awayScore": 36,
+      "homeScore": 16,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Burke",
+      "home": "Kimball/White Lake",
+      "awayScore": 2,
+      "homeScore": 60,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Timber Lake",
+      "home": "Sully Buttes",
+      "awayScore": 50,
+      "homeScore": 6,
+      "final": true,
+      "pick": null,
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Bennett County",
+      "home": "Lyman",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Bennett County",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Sully Buttes",
+      "home": "Lemmon/McIntosh",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Sully Buttes",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Harding County/Bison",
+      "home": "Timber Lake",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Timber Lake",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Kadoka Area",
+      "home": "Philip",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Philip",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Irene-Wakonda",
+      "home": "Scotland/Menno",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Scotland/Menno",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Northwestern",
+      "home": "North Central",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "North Central",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Leola/Frederick Area",
+      "home": "Faulkton Area",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Faulkton Area",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Chester",
+      "home": "Howard",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Howard",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Warner",
+      "home": "Ipswich",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Warner",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Centerville",
+      "home": "Avon",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Centerville",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Florence/Henry",
+      "home": "Redfield",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Redfield",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Kimball/White Lake",
+      "home": "Stanley County",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Kimball/White Lake",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Castlewood",
+      "home": "De Smet",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Castlewood",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Waverly-South Shore",
+      "home": "Great Plains Lutheran",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Great Plains Lutheran",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Garretson",
+      "home": "Sioux Falls Lutheran",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Sioux Falls Lutheran",
+      "pickIsYours": true
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Lead-Deadwood",
+      "home": "Hill City",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Lead-Deadwood",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Viborg-Hurley",
+      "home": "Baltic",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Viborg-Hurley",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Platte-Geddes",
+      "home": "Bon Homme",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Platte-Geddes",
+      "pickIsYours": true
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Hanson",
+      "home": "Bridgewater-Emery/Ethan",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Hanson",
+      "pickIsYours": true
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Estelline/Hendricks",
+      "home": "Hamlin",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Hamlin",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Gregory",
+      "home": "Parkston",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Parkston",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Britton-Hecla",
+      "home": "Sisseton",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Britton-Hecla",
+      "pickIsYours": false
+    },
+    {
+      "date": "2026-10-09",
+      "away": "Webster Area",
+      "home": "Waubay/Summit",
+      "awayScore": null,
+      "homeScore": null,
+      "final": false,
+      "pick": "Waubay/Summit",
+      "pickIsYours": false
+    }
+  ]
+}
