@@ -78,8 +78,6 @@ tr.detail td{background:#f6f8f3;padding:6px 10px 12px}
 .sw.mine{background:var(--turf-dark);box-shadow:inset 0 0 0 2px var(--post)}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .btn{border:1.5px solid var(--turf);background:#fff;color:var(--turf);border-radius:6px;padding:6px 12px;cursor:pointer;font-weight:600}
-.btn.hdr{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
-.btn.hdr:hover{background:rgba(255,255,255,.12)}
 .btn.primary{background:var(--turf);color:#fff}
 .empty{color:var(--muted);padding:12px 0}
 
@@ -88,6 +86,27 @@ textarea{width:100%;min-height:420px;border:1px solid var(--line);border-radius:
 .help code{background:var(--turf-soft);padding:1px 4px;border-radius:3px}
 .help p{margin:6px 0;max-width:75ch}
 .formula td{text-align:center}
+.seg{display:inline-flex;border:1.5px solid var(--turf);border-radius:6px;overflow:hidden}
+.segbtn{border:0;background:#fff;color:var(--turf);padding:6px 12px;cursor:pointer;font-weight:600}
+.segbtn[aria-pressed=true]{background:var(--turf);color:#fff}
+.bracket{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:20px;overflow-x:auto;padding:6px 2px 12px}
+.round{display:flex;flex-direction:column}
+.round h3{font:600 17px "Barlow Condensed",sans-serif;margin:0 0 8px}
+.round h3 small{display:block;font:400 12.5px Barlow,sans-serif;color:var(--muted)}
+.round .games{display:flex;flex-direction:column;justify-content:space-around;flex:1;gap:12px}
+.match{border:1px solid var(--line);border-radius:6px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.slot{display:flex;gap:8px;align-items:center;padding:7px 9px;min-height:44px}
+.slot+.slot{border-top:1px solid var(--line)}
+.slot .sd{font:700 16px "Barlow Condensed",sans-serif;width:24px;text-align:center;color:var(--muted)}
+.slot.home .sd{color:var(--turf)}
+.slot .nm{flex:1;line-height:1.2}
+.slot .nm small{display:block;color:var(--muted);font-size:12px}
+.slot .tag{font-size:11px;font-weight:600;color:var(--turf)}
+.slot.tbd .nm{color:var(--muted);font-style:italic}
+.tieflag{font-size:11px;font-weight:600;color:#8a6a00;background:#fbf3d6;border-radius:3px;padding:0 4px;margin-left:4px}
+.outlist{width:auto}
+.outlist td{padding:4px 10px 4px 6px}
+
 label.field{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--muted)}
 label.field select,label.field input{border:1px solid var(--line);border-radius:4px;padding:6px 8px;background:#fff;color:var(--ink);min-width:150px}
 .imp-team{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
@@ -107,16 +126,12 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
     <label>Class<select id="cls"></select></label>
     <label>Playoff spots<input id="spots" type="number" min="0" max="64"></label>
     <label style="flex-direction:row;align-items:center;gap:6px;color:#fff"><input id="showAll" type="checkbox"> Show games from every class</label>
-    <div class="row" style="margin-left:auto">
-      <button class="btn hdr" id="saveBtn" title="Download everything (teams, games, picks, settings) as a JSON file you can load later">Save</button>
-      <button class="btn hdr" id="csvBtn" title="Download each team’s seed points by week as a CSV">Export CSV</button>
-      <button class="btn hdr" id="openBtn" title="Load a saved file or scraper JSON">Open</button>
-    </div>
   </div>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" id="tab-main" aria-selected="true">Standings and picks</button>
+    <button class="tab" role="tab" id="tab-bracket" aria-selected="false">Playoff bracket</button>
     <button class="tab" role="tab" id="tab-import" aria-selected="false">Import from GoBound</button>
-    <button class="tab" role="tab" id="tab-data" aria-selected="false">Teams and games</button>
+    <button class="tab" role="tab" id="tab-data" aria-selected="false">Teams and Games Management</button>
   </div>
 </header>
 
@@ -135,6 +150,23 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
       <p class="note">Auto picks go to the team with more seed points (GoBound’s number when you’ve imported standings), or the better record when seed points aren’t known. Click the other team to change a pick.</p>
       <div class="legend"><span><span class="sw"></span>Auto pick</span><span><span class="sw mine"></span>Your pick</span></div>
       <div id="games"></div>
+    </section>
+  </div>
+
+  <div id="view-bracket" hidden>
+    <section class="panel">
+      <div class="row" style="justify-content:space-between;align-items:flex-start">
+        <div>
+          <h2 id="brTitle">Playoff bracket</h2>
+          <p class="note" id="brNote" style="max-width:80ch"></p>
+        </div>
+        <div class="seg" role="group" aria-label="Which standings to seed from">
+          <button class="segbtn" data-mode="now" aria-pressed="true">Current standings</button>
+          <button class="segbtn" data-mode="proj" aria-pressed="false">With your picks</button>
+        </div>
+      </div>
+      <div id="bracket" class="bracket"></div>
+      <div id="brExtra"></div>
     </section>
   </div>
 
@@ -186,15 +218,15 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
   <div id="view-data" hidden>
     <div class="grid">
       <section class="panel">
-        <h2>Teams and games</h2>
-        <p class="note">Edit the list, then apply. Your picks are kept for games that still exist.</p>
+        <h2>Teams and Games Management</h2>
+        <p class="note">Edit the list, then apply. Your picks are kept for games that still exist. <b>Save</b> keeps everything, including your picks, in a file that <b>Open</b> restores.</p>
         <textarea id="dataText" spellcheck="false"></textarea>
         <ul class="errors" id="errors"></ul>
         <div class="row" style="margin-top:10px">
           <button class="btn primary" id="apply">Apply changes</button>
-          <button class="btn" id="exportBtn">Save to file</button>
-          <button class="btn" id="importBtn">Load from file</button>
-          <button class="btn" id="sampleBtn">Load sample data</button>
+          <button class="btn" id="saveBtn" title="Download everything (teams, games, picks, settings) as a JSON file you can open later">Save</button>
+          <button class="btn" id="csvBtn" title="Download each team’s seed points by week as a CSV">Export CSV</button>
+          <button class="btn" id="openBtn" title="Open a saved file or scraper JSON">Open</button>
           <button class="btn" id="clearBtn">Clear all data</button>
           <input type="file" id="fileIn" accept=".json,.txt,.csv" hidden>
         </div>
@@ -213,7 +245,8 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
         <p>Add <code>nv</code> as a sixth field for a non-varsity opponent; that game is left out of seed points entirely.</p>
         <p>Use YYYY-MM-DD dates so games sort correctly. A game entered twice (once from each team’s schedule) is counted once. Lines starting with <code>#</code> are ignored.</p>
         <p>An opponent’s win percentage counts every varsity game in the list for that team, so enter full schedules for any team that shows up as an opponent.</p>
-        <h2 style="margin-top:16px">Seed point table</h2>
+        <h2 style="margin-top:16px">Seed point tables</h2>
+        <p class="note" style="margin:0 0 4px">Class 11B and 9-man (9AA, 9A, 9B)</p>
         <table class="formula">
           <tr><th class="l">Opponent win %</th><th>Win</th><th>Loss</th></tr>
           <tr><td class="l">.875 – 1.000</td><td>51.5</td><td>39</td></tr>
@@ -225,6 +258,15 @@ label.field select,label.field input{border:1px solid var(--line);border-radius:
           <tr><td class="l">.125 – .249</td><td>42.5</td><td>30</td></tr>
           <tr><td class="l">.000 – .124</td><td>41</td><td>28.5</td></tr>
         </table>
+        <p class="note" style="margin:12px 0 4px">Class 11AAA, 11AA and 11A</p>
+        <table class="formula">
+          <tr><th class="l">Opponent win %</th><th>Win</th><th>Loss</th></tr>
+          <tr><td class="l">.750 – 1.000</td><td>50</td><td>39</td></tr>
+          <tr><td class="l">.500 – .749</td><td>47</td><td>36</td></tr>
+          <tr><td class="l">.250 – .499</td><td>44</td><td>33</td></tr>
+          <tr><td class="l">.000 – .249</td><td>41</td><td>30</td></tr>
+        </table>
+        <p class="note">Points use the scoring team’s own class table. Source: SDHSAA Football Handbook (revised 7/26).</p>
         <p>Undefeated teams get one bonus point per game played, except in 11AAA. Average = total points ÷ varsity games played.</p>
       </section>
     </div>
@@ -273,12 +315,19 @@ const SAMPLE = `# Sample data with made-up teams. Replace with real schedules.
 2026-10-09, Missouri Breaks, Prairie City, ,
 `;
 
-// Opponent win % floor, points for win, points for loss
-const TABLE = [[0.875,51.5,39],[0.75,50,37.5],[0.625,48.5,36],[0.5,47,34.5],
-               [0.375,45.5,33],[0.25,44,31.5],[0.125,42.5,30],[0,41,28.5]];
-function seedPoints(pct, won){
-  for (const [min,w,l] of TABLE) if (pct + 1e-9 >= min) return won ? w : l;
-  return won ? 41 : 28.5;
+// Opponent win % floor, points for win, points for loss (SDHSAA Football Handbook, rev. 7/26)
+// 11B and 9-man (9AA, 9A, 9B and other classes):
+const TABLE_9 = [[0.875,51.5,39],[0.75,50,37.5],[0.625,48.5,36],[0.5,47,34.5],
+                 [0.375,45.5,33],[0.25,44,31.5],[0.125,42.5,30],[0,41,28.5]];
+// 11AAA, 11AA, 11A:
+const TABLE_11 = [[0.75,50,39],[0.5,47,36],[0.25,44,33],[0,41,30]];
+const usesTable11 = cls => /^11A{1,3}$/i.test(cls || '');
+// Points are earned on the scoring team's own class table, whatever the opponent's class
+function seedPoints(pct, won, cls){
+  const table = usesTable11(cls) ? TABLE_11 : TABLE_9;
+  for (const [min,w,l] of table) if (pct + 1e-9 >= min) return won ? w : l;
+  const last = table[table.length - 1];
+  return won ? last[1] : last[2];
 }
 
 const $ = id => document.getElementById(id);
@@ -571,7 +620,7 @@ function compute(teams, games, winnerOf){
       const o = rec[opp], gp = o.w + o.l;
       const pct = gp ? o.w / gp : 0;
       const won = x.w === k;
-      const p = seedPoints(pct, won);
+      const p = seedPoints(pct, won, teams[k].cls);
       total += p; count++;
       log.push({ g:x.g, opp, won, pct, oppW:o.w, oppL:o.l, p, predicted: !x.g.played });
     }
@@ -653,7 +702,7 @@ function avgCell(t, d, isProj){
 function renderStandings(){
   const { teams, now, proj } = model;
   const keys = Object.keys(teams).filter(k => teams[k].cls === state.cls);
-  if (!keys.length){ $('standings').innerHTML = '<p class="empty">No teams in this class yet. Add them on the Teams and games tab.</p>'; return; }
+  if (!keys.length){ $('standings').innerHTML = '<p class="empty">No teams in this class yet. Add them on the Teams and Games Management tab.</p>'; return; }
   const N = ranks(keys, now), P = ranks(keys, proj);
   const withOfficial = keys.filter(k => teams[k].official != null);
   const checkable = withOfficial.filter(k => now[k].count && !now[k].fromOfficial);
@@ -707,7 +756,7 @@ function renderGames(){
   const { teams, games, now, auto } = model;
   const list = games.filter(g => !g.played && !g.nv &&
     (state.showAll || teams[g.a].cls === state.cls || teams[g.b].cls === state.cls));
-  if (!list.length){ $('games').innerHTML = '<p class="empty">No unplayed games for this class. Add games with blank scores on the Teams and games tab.</p>'; return; }
+  if (!list.length){ $('games').innerHTML = '<p class="empty">No unplayed games for this class. Add games with blank scores on the Teams and Games Management tab.</p>'; return; }
   let h = '', lastDate = null;
   for (const g of list){
     if (g.date !== lastDate){ h += `<div class="date">${esc(g.date)}</div>`; lastDate = g.date; }
@@ -734,6 +783,7 @@ function render(){
   renderClasses();
   renderStandings();
   renderGames();
+  renderBracket();
   $('errors').innerHTML = model.errors.map(e => `<li>${esc(e)}</li>`).join('');
   $('spots').value = state.spots;
   $('showAll').checked = state.showAll;
@@ -770,12 +820,17 @@ $('games').addEventListener('click', e => {
   update();
 });
 $('resetPicks').onclick = () => { state.picks = {}; update(); };
-$('cls').onchange = e => { state.cls = e.target.value; state.open = null; update(); };
+$('cls').onchange = e => {
+  state.cls = e.target.value; state.open = null;
+  const f = playoffFormat(state.cls);
+  if (f) state.spots = f.size; // the cutoff line follows SDHSAA's bracket size for the class
+  update();
+};
 $('spots').onchange = e => { state.spots = Math.max(0, parseInt(e.target.value, 10) || 0); update(); };
 $('showAll').onchange = e => { state.showAll = e.target.checked; update(); };
 
 function showTab(which){
-  for (const t of ['main','import','data']){
+  for (const t of ['main','bracket','import','data']){
     $('tab-'+t).setAttribute('aria-selected', which === t);
     $('view-'+t).hidden = which !== t;
   }
@@ -783,6 +838,7 @@ function showTab(which){
   if (which === 'import' && state.cls && /^(11|9)/.test(state.cls)) $('impClass').value = state.cls;
 }
 $('tab-main').onclick = () => showTab('main');
+$('tab-bracket').onclick = () => showTab('bracket');
 $('tab-import').onclick = () => showTab('import');
 $('tab-data').onclick = () => showTab('data');
 $('clearBtn').onclick = () => {
@@ -794,10 +850,120 @@ $('apply').onclick = () => {
   state.text = $('dataText').value; update();
   if (!model.errors.length) showTab('main');
 };
-$('sampleBtn').onclick = () => {
-  if (!confirm('Replace your teams and games with the sample data?')) return;
-  state.text = SAMPLE; state.picks = {}; $('dataText').value = SAMPLE; update();
+// ---------- Playoff bracket (SDHSAA Football Handbook, rev. 7/26) ----------
+const PLAYOFF_DATES = {
+  r1: 'Thu, Oct 22', qf: 'Thu, Oct 29', sf: 'Fri, Nov 6',
+  final: { '9B': 'Thu, Nov 12', '9A': 'Thu, Nov 12', '9AA': 'Thu, Nov 12',
+           '11B': 'Fri, Nov 13', '11A': 'Fri, Nov 13', '11AA': 'Fri, Nov 13', '11AAA': 'Sat, Nov 14' }
 };
+function playoffFormat(cls){
+  const c = (cls || '').toUpperCase();
+  if (c === '11AAA') return { size: 8, by: 'winpct' };
+  if (c === '11AA' || c === '11A') return { size: 8, by: 'seed' };
+  if (['11B', '9AA', '9A', '9B'].includes(c)) return { size: 16, by: 'seed' };
+  return null;
+}
+let bracketMode = 'now';
+
+// Head-to-head between two teams in the chosen view: +1 if a has more wins over b, -1 if fewer, 0 if even/none
+function headToHead(a, b, data){
+  let net = 0;
+  for (const x of data[a].log) if (x.opp === b) net += x.won ? 1 : -1;
+  return Math.sign(net);
+}
+
+// Seeds a class. Returns the ordered list plus which neighbours are still tied after the tiebreakers used here.
+function seedClass(cls, data){
+  const f = playoffFormat(cls);
+  const { teams } = model;
+  const keys = Object.keys(teams).filter(k => teams[k].cls === cls && (data[k].count || teams[k].official != null));
+  const pct = k => { const d = data[k]; return d.w + d.l ? d.w / (d.w + d.l) : 0; };
+  const avg = k => +score(k, data).toFixed(3); // seed averages compare to the thousandth, as SDHSAA computes them
+  const cmp = (a, b) => {
+    if (f.by === 'winpct') {                     // 11AAA: winning percentage, head-to-head, then seed points
+      return (pct(b) - pct(a)) || -headToHead(a, b, data) || (avg(b) - avg(a));
+    }
+    const da = data[a], db = data[b];            // 11AA-9B: seed average, then the handbook's tiebreakers in order
+    return (avg(b) - avg(a))
+      || -headToHead(a, b, data)
+      || ((db.l === 0) - (da.l === 0))           // undefeated team wins the tie
+      || (db.count - da.count)                   // most games
+      || (db.w - da.w)                           // most wins
+      || (da.l - db.l);                          // fewest losses
+  };
+  const order = keys.sort((a, b) => cmp(a, b) || teams[a].name.localeCompare(teams[b].name));
+  const tiedWithNext = order.map((k, i) => i + 1 < order.length && cmp(k, order[i + 1]) === 0);
+  return { order, tiedWithNext, f };
+}
+
+function renderBracket(){
+  const box = $('bracket'), extra = $('brExtra'), note = $('brNote');
+  const cls = state.cls, f = playoffFormat(cls);
+  $('brTitle').textContent = cls ? `${cls} playoff bracket` : 'Playoff bracket';
+  document.querySelectorAll('.segbtn').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === bracketMode));
+  if (!f) {
+    note.textContent = '';
+    box.innerHTML = `<p class="empty">The SDHSAA football handbook doesn’t list a seed-point playoff bracket for ${esc(cls || 'this class')}. Choose 11AAA, 11AA, 11A, 11B, 9AA, 9A or 9B.</p>`;
+    extra.innerHTML = ''; return;
+  }
+  const data = bracketMode === 'proj' ? model.proj : model.now;
+  const { order, tiedWithNext } = seedClass(cls, data);
+  const basis = f.by === 'winpct'
+    ? 'Top 8 by winning percentage (head-to-head, then seed points break ties).'
+    : `Top ${f.size} by seed point average (head-to-head, undefeated, most games, most wins, then fewest losses break ties).`;
+  note.textContent = `${basis} Higher seed hosts every round; no re-seeding. Seeded from ${bracketMode === 'proj' ? 'projected standings, including your picks for unplayed games' : 'games already played'}.`;
+  if (order.length < 2) { box.innerHTML = '<p class="empty">Not enough results in this class yet. Import games or standings first.</p>'; extra.innerHTML = ''; return; }
+
+  const seeds = order.slice(0, f.size);              // seeds[0] is the #1 seed
+  const t = model.teams;
+  const info = k => {
+    const d = data[k];
+    const avgTxt = d.count ? d.spa.toFixed(3) : (t[k].official != null ? t[k].official.toFixed(3) : '—');
+    return f.by === 'winpct' ? `${d.w}-${d.l} · ${avgTxt}` : `${avgTxt} · ${d.w}-${d.l}`;
+  };
+  const tieTag = i => (tiedWithNext[i] || (i > 0 && tiedWithNext[i - 1])) ? '<span class="tieflag" title="Still tied after the tiebreakers this app applies. SDHSAA would continue with common opponents, opponents’ averages, then a draw.">tie</span>' : '';
+  const slot = (seed, home) => {
+    const k = seeds[seed - 1];
+    if (!k) return `<div class="slot tbd"><span class="sd">${seed}</span><span class="nm">No team qualifies</span></div>`;
+    return `<div class="slot${home ? ' home' : ''}"><span class="sd">${seed}</span>
+      <span class="nm">${esc(t[k].name)}${tieTag(seed - 1)}<small>${info(k)}</small></span>${home ? '<span class="tag">Home</span>' : ''}</div>`;
+  };
+
+  // Standard brackets: 1 and 2 can only meet in the final
+  const firstRound = f.size === 16
+    ? [[1,16],[8,9],[5,12],[4,13],[3,14],[6,11],[7,10],[2,15]]
+    : [[1,8],[4,5],[3,6],[2,7]];
+  const names = f.size === 16 ? ['First round', 'Quarterfinals', 'Semifinals', 'State final'] : ['Quarterfinals', 'Semifinals', 'State final'];
+  const dates = f.size === 16 ? [PLAYOFF_DATES.r1, PLAYOFF_DATES.qf, PLAYOFF_DATES.sf, PLAYOFF_DATES.final[cls]]
+                              : [PLAYOFF_DATES.qf, PLAYOFF_DATES.sf, PLAYOFF_DATES.final[cls]];
+
+  let groups = firstRound.map(p => p.slice());       // seeds that could arrive from each match
+  let h = `<div class="round"><h3>${names[0]}<small>${dates[0]}</small></h3><div class="games">` +
+    firstRound.map(([a, b]) => `<div class="match">${slot(a, true)}${slot(b, false)}</div>`).join('') + '</div></div>';
+  for (let r = 1; r < names.length; r++) {
+    const next = [];
+    let games = '';
+    for (let i = 0; i < groups.length; i += 2) {
+      // Short seed lists read better ("#1, #8, #9 or #16"); the final just names the semifinals
+      const lbl = j => groups[j].length <= 4
+        ? `Winner: ${groups[j].map(x => '#' + x).join(', ').replace(/, ([^,]*)$/, ' or $1')}`
+        : `Winner of semifinal ${j + 1}`;
+      games += `<div class="match"><div class="slot tbd"><span class="sd">·</span><span class="nm">${lbl(i)}</span></div>
+        <div class="slot tbd"><span class="sd">·</span><span class="nm">${lbl(i + 1)}</span></div></div>`;
+      next.push(groups[i].concat(groups[i + 1]).sort((x, y) => x - y));
+    }
+    groups = next;
+    h += `<div class="round"><h3>${names[r]}<small>${dates[r]}${r === names.length - 1 ? ' · DakotaDome, Vermillion' : ''}</small></h3><div class="games">${games}</div></div>`;
+  }
+  box.innerHTML = h;
+
+  const out = order.slice(f.size, f.size + 4);
+  extra.innerHTML = out.length ? `<h3 style="font:600 17px 'Barlow Condensed',sans-serif;margin:14px 0 4px">First teams out</h3>
+    <table class="log outlist">${out.map((k, j) => `<tr><td>${f.size + j + 1}</td><td class="l">${esc(t[k].name)}${tieTag(f.size + j)}</td><td class="l now">${info(k)}</td></tr>`).join('')}</table>
+    <p class="note">Brackets assume every team in the class is playoff-eligible (minimum six varsity games, no more than one forfeit).</p>` : '';
+}
+document.querySelectorAll('.segbtn').forEach(b => b.onclick = () => { bracketMode = b.dataset.mode; renderBracket(); });
+
 // ---------- Save / open ----------
 function download(name, content, type){
   const a = document.createElement('a');
@@ -853,9 +1019,7 @@ async function openFile(file){
 }
 
 $('saveBtn').onclick = saveAll;
-$('exportBtn').onclick = saveAll;
 $('openBtn').onclick = () => $('fileIn').click();
-$('importBtn').onclick = () => $('fileIn').click();
 $('fileIn').onchange = e => { openFile(e.target.files[0]); e.target.value = ''; };
 
 // ---------- CSV export: each team's seed points by week ----------
@@ -1195,7 +1359,7 @@ function readScoreboard(rows){
     });
     if (newTeams.length) {
       h += `<div class="imp-team" style="margin-top:14px"><h3>Teams not in the class list</h3>
-        <p class="note" style="margin:0 0 6px">Usually out-of-state or co-op name changes. Leave as Other, or set a class. If one is a different spelling of a listed team, fix it with an @alias line on the Teams and games tab.</p>
+        <p class="note" style="margin:0 0 6px">Usually out-of-state or co-op name changes. Leave as Other, or set a class. If one is a different spelling of a listed team, fix it with an @alias line on the Teams and Games Management tab.</p>
         <label class="field" style="margin-bottom:8px">Set all to <select id="sbAll"><option value="">—</option>${clsOpts('')}</select></label>
         <table class="log">${newTeams.map((n, j) => `<tr><td class="l">${esc(n)}</td><td><select class="sbCls" data-j="${j}">${clsOpts(newCls[n])}</select></td></tr>`).join('')}</table></div>`;
     }
